@@ -1,21 +1,22 @@
 import { awscdk } from 'projen';
+import { CdklabsConstructLibrary } from "cdklabs-projen-project-types";
 import { NodePackageManager } from 'projen/lib/javascript';
 
-const project = new awscdk.AwsCdkConstructLibrary({
+const project = new CdklabsConstructLibrary({
   projenrcTs: true,
-  author: 'tmokmss',
-  authorAddress: 'tomookam@live.jp',
+  author: "AWS",
+  authorAddress: "aws-cdk-dev@amazon.com",
   // we don't strictly guarantee it works in older CDK (integ-runner runs on newer CDK), but hopefully it should.
   cdkVersion: '2.38.0', // For using @aws-cdk/integ-runner
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.8.0',
-  name: 'deploy-time-build',
-  license: 'MIT',
-  repositoryUrl: 'https://github.com/tmokmss/deploy-time-build.git',
+  name: "@cdklabs/deploy-time-build",
+  // license: 'MIT',
+  repositoryUrl: 'https://github.com/cdklabs/deploy-time-build.git',
   npmTrustedPublishing: true,
   publishToPypi: {
-    distName: 'deploy-time-build',
-    module: 'deploy_time_build',
+    distName: 'cdklabs.deploy-time-build',
+    module: 'cdklabs.deploy_time_build',
     trustedPublishing: true,
   },
   packageManager: NodePackageManager.NPM,

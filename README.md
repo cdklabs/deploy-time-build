@@ -11,7 +11,7 @@ AWS CDK L3 construct that allows you to run a build job for specific purposes. C
 Install from npm:
 
 ```sh
-npm i deploy-time-build
+npm i @cdklabs/deploy-time-build
 ```
 
 This library defines several L3 constructs for specific use cases. Here is the usage for each case.
@@ -25,11 +25,8 @@ You can build a Node.js app such as a React frontend app on deploy time by the `
 The following code is an example to use the construct:
 
 ```ts
-import { NodejsBuild } from 'deploy-time-build';
+import { NodejsBuild } from '@cdklabs/deploy-time-build';
 
-declare const api: apigateway.RestApi;
-declare const destinationBucket: s3.IBucket;
-declare const distribution: cloudfront.IDistribution;
 new NodejsBuild(this, 'ExampleBuild', {
     assets: [
         {
@@ -52,19 +49,24 @@ The resulting build artifacts will be deployed to `destinationBucket` from CodeB
 
 You can specify multiple input assets by `assets` property. These assets are extracted to respective sub directories. For example, assume you specified assets like the following:
 
-```ts
-assets: [
-    {
-        // directory containing source code and package.json
-        path: 'example-app',
-        exclude: ['dist', 'node_modules'],
-        commands: ['npm install'],
-    },
-    {
-        // directory that is also required for the build
-        path: 'module1',
-    },
-],
+```ts fixture=imported
+new NodejsBuild(this, 'ExampleBuild', {
+    assets: [
+        {
+            // directory containing source code and package.json
+            path: 'example-app',
+            exclude: ['dist', 'node_modules'],
+            commands: ['npm install'],
+        },
+        {
+            // directory that is also required for the build
+            path: 'module1',
+        },
+    ],
+    destinationBucket,
+    distribution,
+    outputSourceDirectory: 'dist',
+});
 ```
 
 Then, the extracted directories will be located as the following:
@@ -87,7 +89,7 @@ Please also check [the example directory](./example/) for a complete example.
 #### Allowing access from the build environment to other AWS resources
 Since `NodejsBuild` construct implements [`iam.IGrantable`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_iam.IGrantable.html) interface, you can use `grant*` method of other constructs to allow access from the build environment.
 
-```ts
+```ts fixture=imported
 declare const someBucket: s3.IBucket;
 declare const build: NodejsBuild;
 someBucket.grantReadWrite(build);
@@ -95,9 +97,9 @@ someBucket.grantReadWrite(build);
 
 You can also use [`iam.Grant`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_iam.Grant.html) class to allow any actions and resources.
 
-```ts
+```ts fixture=imported
 declare const build: NodejsBuild;
-iam.Grant.addToPrincipal({ grantee: build, actions: ['s3:ListBucket'], resources:['*'] })
+iam.Grant.addToPrincipal({ grantee: build, actions: ['s3:ListBucket'], resourceArns:['*'] })
 ```
 
 #### Motivation - why do we need the `NodejsBuild` construct?
@@ -110,24 +112,29 @@ Since this construct builds your frontend apps every time you deploy the stack a
 
 To mitigate this issue, you can separate the stack for frontend construct from other stacks especially for a dev environment. Another solution would be to set a fixed string as an asset hash, and avoid builds on every deployment.
 
-```ts
-      assets: [
+```ts fixture=imported
+new NodejsBuild(this, 'ExampleBuild', {
+    assets: [
         {
-          path: '../frontend',
-          exclude: ['node_modules', 'dist'],
-          commands: ['npm ci'],
-          // Set a fixed string as a asset hash to prevent deploying changes.
-          // This can be useful for an environment you use to develop locally.
-          assetHash: 'frontend_asset',
+            path: '../frontend',
+            exclude: ['node_modules', 'dist'],
+            commands: ['npm ci'],
+            // Set a fixed string as a asset hash to prevent deploying changes.
+            // This can be useful for an environment you use to develop locally.
+            assetHash: 'frontend_asset',
         },
-      ],
+    ],
+    destinationBucket,
+    distribution,
+    outputSourceDirectory: 'dist',
+});
 ```
 
 ### Build a container image
 You can build a container image at deploy time by the following code:
 
 ```ts
-import { ContainerImageBuild } from 'deploy-time-build';
+import { ContainerImageBuild } from '@cdklabs/deploy-time-build';
 
 const image = new ContainerImageBuild(this, 'Build', { 
     directory: 'example-image', 
@@ -160,7 +167,7 @@ The third argument (props) are a superset of DockerImageAsset's properties. You 
 The following code is an example to use the construct:
 
 ```ts
-import { SociIndexV2Build } from 'deploy-time-build';
+import { SociIndexV2Build } from '@cdklabs/deploy-time-build';
 
 const asset = new DockerImageAsset(this, 'Image', { directory: 'example-image' });
 const sociIndex = new SociIndexV2Build(this, 'SociV2Index', {
