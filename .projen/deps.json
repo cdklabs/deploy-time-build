@@ -1,6 +1,16 @@
 {
   "dependencies": [
     {
+      "name": "@aws-cdk/integ-runner",
+      "version": "^2.159.0-alpha.0",
+      "type": "build"
+    },
+    {
+      "name": "@aws-cdk/integ-tests-alpha",
+      "version": "^2.159.0-alpha.0",
+      "type": "build"
+    },
+    {
       "name": "@stylistic/eslint-plugin",
       "version": "^2",
       "type": "build"
@@ -11,7 +21,6 @@
     },
     {
       "name": "@types/node",
-      "version": "^18",
       "type": "build"
     },
     {
@@ -25,7 +34,18 @@
       "type": "build"
     },
     {
-      "name": "cdklabs-projen-project-types",
+      "name": "aws-cdk-lib",
+      "version": "^2.159.0",
+      "type": "build"
+    },
+    {
+      "name": "aws-cdk",
+      "version": "^2.159.0",
+      "type": "build"
+    },
+    {
+      "name": "commit-and-tag-version",
+      "version": "^12",
       "type": "build"
     },
     {
@@ -65,11 +85,12 @@
     },
     {
       "name": "jsii-rosetta",
+      "version": "~5.8.0",
       "type": "build"
     },
     {
       "name": "jsii",
-      "version": "~5.7",
+      "version": "~5.8.0",
       "type": "build"
     },
     {
@@ -89,18 +110,8 @@
       "type": "build"
     },
     {
-      "name": "@aws-cdk/integ-runner",
-      "version": "latest",
-      "type": "devenv"
-    },
-    {
-      "name": "@aws-cdk/integ-tests-alpha",
-      "version": "latest",
-      "type": "devenv"
-    },
-    {
       "name": "aws-cdk-lib",
-      "version": "^2.1.0",
+      "version": "^2.38.0",
       "type": "peer"
     },
     {

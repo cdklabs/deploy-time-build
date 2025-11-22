@@ -1,0 +1,68 @@
+{
+  "version": "48.0.0",
+  "files": {
+    "b31e00a71ec5a9e3589df0e6879037cb1dcafee2e079c062e2c8eb891ba98b74": {
+      "displayName": "DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3/Code",
+      "source": {
+        "path": "asset.b31e00a71ec5a9e3589df0e6879037cb1dcafee2e079c062e2c8eb891ba98b74",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region-745b40df": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "b31e00a71ec5a9e3589df0e6879037cb1dcafee2e079c062e2c8eb891ba98b74.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "671fd67999ea8d2a0faccca65f99e4e3992509a09fba9e8b2986022f55a1bf08": {
+      "displayName": "SociIndexBuildIntegTest Template",
+      "source": {
+        "path": "SociIndexBuildIntegTest.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region-b484a72e": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "671fd67999ea8d2a0faccca65f99e4e3992509a09fba9e8b2986022f55a1bf08.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {
+    "ab5f508a32d9a54cc5ef4fce0f1fc903ea92d9855fab266412129dd4a0b0d45f": {
+      "displayName": "Image1/Image",
+      "source": {
+        "directory": "asset.ab5f508a32d9a54cc5ef4fce0f1fc903ea92d9855fab266412129dd4a0b0d45f",
+        "dockerBuildArgs": {
+          "DUMMY_FILE_SIZE_MB": "11",
+          "HASH": "2b2834c69e12688b5211141adea6ccad"
+        }
+      },
+      "destinations": {
+        "current_account-current_region-40c0e7ad": {
+          "repositoryName": "cdk-hnb659fds-container-assets-${AWS::AccountId}-${AWS::Region}",
+          "imageTag": "ab5f508a32d9a54cc5ef4fce0f1fc903ea92d9855fab266412129dd4a0b0d45f",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-image-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "67a4b2afcaa5ced5af180155df75292878cc322b0c2b7da7b75f8162675797d1": {
+      "displayName": "Image2/Image",
+      "source": {
+        "directory": "asset.67a4b2afcaa5ced5af180155df75292878cc322b0c2b7da7b75f8162675797d1",
+        "dockerBuildArgs": {
+          "DUMMY_FILE_SIZE_MB": "50"
+        }
+      },
+      "destinations": {
+        "current_account-current_region-d8adf967": {
+          "repositoryName": "cdk-hnb659fds-container-assets-${AWS::AccountId}-${AWS::Region}",
+          "imageTag": "67a4b2afcaa5ced5af180155df75292878cc322b0c2b7da7b75f8162675797d1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-image-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  }
+}

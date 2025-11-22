@@ -24,6 +24,24 @@
         }
       ]
     },
+    "bump": {
+      "name": "bump",
+      "description": "Bumps version based on latest git tag and generates a changelog entry",
+      "env": {
+        "OUTFILE": "package.json",
+        "CHANGELOG": "dist/changelog.md",
+        "BUMPFILE": "dist/version.txt",
+        "RELEASETAG": "dist/releasetag.txt",
+        "RELEASE_TAG_PREFIX": "",
+        "BUMP_PACKAGE": "commit-and-tag-version@^12"
+      },
+      "steps": [
+        {
+          "builtin": "release/bump-version"
+        }
+      ],
+      "condition": "git log --oneline -1 | grep -qv \"chore(release):\""
+    },
     "clobber": {
       "name": "clobber",
       "description": "hard resets to HEAD of origin and cleans the local repo",
@@ -112,7 +130,7 @@
       },
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ test build-tools projenrc .projenrc.ts",
           "receiveArgs": true
         }
       ]
@@ -122,7 +140,7 @@
       "description": "Install project dependencies and update lockfile (non-frozen)",
       "steps": [
         {
-          "exec": "yarn install --check-files"
+          "exec": "npm install"
         }
       ]
     },
@@ -131,27 +149,7 @@
       "description": "Install project dependencies using frozen lockfile",
       "steps": [
         {
-          "exec": "yarn install --check-files --frozen-lockfile"
-        }
-      ]
-    },
-    "integ": {
-      "name": "integ",
-      "description": "Run integration snapshot tests",
-      "steps": [
-        {
-          "exec": "yarn integ-runner --language typescript",
-          "receiveArgs": true
-        }
-      ]
-    },
-    "integ:update": {
-      "name": "integ:update",
-      "description": "Run and update integration snapshot tests",
-      "steps": [
-        {
-          "exec": "yarn integ-runner --language typescript --update-on-failed",
-          "receiveArgs": true
+          "exec": "npm ci"
         }
       ]
     },
@@ -177,43 +175,7 @@
           "spawn": "package:js"
         },
         {
-          "spawn": "package:java"
-        },
-        {
           "spawn": "package:python"
-        },
-        {
-          "spawn": "package:dotnet"
-        },
-        {
-          "spawn": "package:go"
-        }
-      ]
-    },
-    "package:dotnet": {
-      "name": "package:dotnet",
-      "description": "Create dotnet language bindings",
-      "steps": [
-        {
-          "exec": "jsii-pacmak -v --target dotnet"
-        }
-      ]
-    },
-    "package:go": {
-      "name": "package:go",
-      "description": "Create go language bindings",
-      "steps": [
-        {
-          "exec": "jsii-pacmak -v --target go"
-        }
-      ]
-    },
-    "package:java": {
-      "name": "package:java",
-      "description": "Create java language bindings",
-      "steps": [
-        {
-          "exec": "jsii-pacmak -v --target java"
         }
       ]
     },
@@ -240,10 +202,11 @@
       "description": "Runs after successful compilation",
       "steps": [
         {
-          "spawn": "docgen"
+          "exec": "npm ci && npm run build",
+          "cwd": "lambda/trigger-codebuild"
         },
         {
-          "spawn": "rosetta:extract"
+          "spawn": "docgen"
         }
       ]
     },
@@ -255,12 +218,27 @@
       "name": "pre-compile",
       "description": "Prepare the project for compilation"
     },
-    "rosetta:extract": {
-      "name": "rosetta:extract",
-      "description": "Test rosetta extract",
+    "release": {
+      "name": "release",
+      "description": "Prepare a release from \"main\" branch",
+      "env": {
+        "RELEASE": "true"
+      },
       "steps": [
         {
-          "exec": "yarn --silent jsii-rosetta extract --strict"
+          "exec": "rm -fr dist"
+        },
+        {
+          "spawn": "bump"
+        },
+        {
+          "spawn": "build"
+        },
+        {
+          "spawn": "unbump"
+        },
+        {
+          "exec": "git diff --ignore-space-at-eol --exit-code"
         }
       ]
     },
@@ -276,7 +254,7 @@
           "spawn": "eslint"
         },
         {
-          "spawn": "integ"
+          "exec": "npx tsc -p tsconfig.dev.json && npx integ-runner"
         }
       ]
     },
@@ -289,6 +267,23 @@
         }
       ]
     },
+    "unbump": {
+      "name": "unbump",
+      "description": "Restores version to 0.0.0",
+      "env": {
+        "OUTFILE": "package.json",
+        "CHANGELOG": "dist/changelog.md",
+        "BUMPFILE": "dist/version.txt",
+        "RELEASETAG": "dist/releasetag.txt",
+        "RELEASE_TAG_PREFIX": "",
+        "BUMP_PACKAGE": "commit-and-tag-version@^12"
+      },
+      "steps": [
+        {
+          "builtin": "release/reset-version"
+        }
+      ]
+    },
     "upgrade": {
       "name": "upgrade",
       "description": "upgrade dependencies",
@@ -297,49 +292,13 @@
       },
       "steps": [
         {
-          "exec": "echo No dependencies to upgrade."
-        }
-      ]
-    },
-    "upgrade-cdklabs-projen-project-types": {
-      "name": "upgrade-cdklabs-projen-project-types",
-      "description": "upgrade cdklabs-projen-project-types",
-      "env": {
-        "CI": "0"
-      },
-      "steps": [
-        {
-          "exec": "npx npm-check-updates@16 --upgrade --target=latest --peer --no-deprecated --dep=dev,peer,prod,optional --filter=cdklabs-projen-project-types,projen"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-pacmak,projen,ts-jest,ts-node,typescript"
         },
         {
-          "exec": "yarn install --check-files"
+          "exec": "npm install"
         },
         {
-          "exec": "yarn upgrade cdklabs-projen-project-types projen"
-        },
-        {
-          "exec": "npx projen"
-        },
-        {
-          "spawn": "post-upgrade"
-        }
-      ]
-    },
-    "upgrade-dev-deps": {
-      "name": "upgrade-dev-deps",
-      "description": "upgrade dev dependencies",
-      "env": {
-        "CI": "0"
-      },
-      "steps": [
-        {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev --filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-pacmak,jsii-rosetta,ts-jest,ts-node,typescript"
-        },
-        {
-          "exec": "yarn install --check-files"
-        },
-        {
-          "exec": "yarn upgrade @stylistic/eslint-plugin @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii ts-jest ts-node typescript @aws-cdk/integ-runner @aws-cdk/integ-tests-alpha"
+          "exec": "npm update @aws-cdk/integ-runner @aws-cdk/integ-tests-alpha @stylistic/eslint-plugin @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk-lib aws-cdk commit-and-tag-version eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen ts-jest ts-node typescript constructs"
         },
         {
           "exec": "npx projen"
