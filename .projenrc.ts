@@ -58,6 +58,4 @@ project.eslint?.addRules({
 project.projectBuild.postCompileTask.prependExec('npm ci && npm run build', {
   cwd: 'lambda/trigger-codebuild',
 });
-// Run integ-test
-project.projectBuild.testTask.exec('npx tsc -p tsconfig.dev.json && npx integ-runner');
 project.synth();

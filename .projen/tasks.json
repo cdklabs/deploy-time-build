@@ -324,9 +324,6 @@
         },
         {
           "spawn": "integ"
-        },
-        {
-          "exec": "npx tsc -p tsconfig.dev.json && npx integ-runner"
         }
       ]
     },
