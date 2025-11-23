@@ -6,7 +6,7 @@ const project = new CdklabsConstructLibrary({
   author: 'AWS',
   authorAddress: 'aws-cdk-dev@amazon.com',
   // we don't strictly guarantee it works in older CDK (integ-runner runs on newer CDK), but hopefully it should.
-  cdkVersion: '2.38.0', // For using @aws-cdk/integ-runner
+  cdkVersion: '2.69.0', // C# build fails before this version
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.8.0',
   name: '@cdklabs/deploy-time-build',
