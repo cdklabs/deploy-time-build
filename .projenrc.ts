@@ -10,7 +10,7 @@ const project = new CdklabsConstructLibrary({
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.8.0',
   name: '@cdklabs/deploy-time-build',
-  // license: 'MIT',
+  release: false,
   repositoryUrl: 'https://github.com/cdklabs/deploy-time-build.git',
   npmTrustedPublishing: true,
   publishToPypi: {
@@ -40,6 +40,7 @@ const project = new CdklabsConstructLibrary({
     },
   },
   devDeps: [
+    "cdklabs-projen-project-types",
     'aws-cdk-lib@^2.159.0',
     'aws-cdk@^2.159.0',
     'constructs',
