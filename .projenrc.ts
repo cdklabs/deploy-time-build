@@ -40,7 +40,7 @@ const project = new CdklabsConstructLibrary({
     },
   },
   devDeps: [
-    "cdklabs-projen-project-types",
+    'cdklabs-projen-project-types',
     'aws-cdk-lib@^2.159.0',
     'aws-cdk@^2.159.0',
     'constructs',
