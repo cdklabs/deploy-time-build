@@ -34,7 +34,6 @@
     "unbump": "npx projen unbump",
     "upgrade": "npx projen upgrade",
     "upgrade-cdklabs-projen-project-types": "npx projen upgrade-cdklabs-projen-project-types",
-    "upgrade-dev-deps": "npx projen upgrade-dev-deps",
     "watch": "npx projen watch",
     "projen": "npx projen"
   },
