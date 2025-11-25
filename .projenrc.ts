@@ -10,7 +10,6 @@ const project = new CdklabsConstructLibrary({
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.8.0',
   name: '@cdklabs/deploy-time-build',
-  release: false,
   repositoryUrl: 'https://github.com/cdklabs/deploy-time-build.git',
   npmTrustedPublishing: true,
   publishToPypi: {
