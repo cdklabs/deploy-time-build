@@ -49,6 +49,7 @@ const project = new CdklabsConstructLibrary({
   peerDependencyOptions: {
     pinnedDevDependency: false,
   },
+  upgradeRuntimeDepsAsFix: false,
   description: 'Build during CDK deployment.',
 });
 project.eslint?.addRules({
