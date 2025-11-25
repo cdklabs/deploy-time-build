@@ -24,6 +24,25 @@
         }
       ]
     },
+    "bump": {
+      "name": "bump",
+      "description": "Bumps version based on latest git tag and generates a changelog entry",
+      "env": {
+        "OUTFILE": "package.json",
+        "CHANGELOG": "dist/changelog.md",
+        "BUMPFILE": "dist/version.txt",
+        "RELEASETAG": "dist/releasetag.txt",
+        "RELEASE_TAG_PREFIX": "",
+        "BUMP_PACKAGE": "commit-and-tag-version@^12",
+        "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep \"^(feat|fix){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+\""
+      },
+      "steps": [
+        {
+          "builtin": "release/bump-version"
+        }
+      ],
+      "condition": "git log --oneline -1 | grep -qv \"chore(release):\""
+    },
     "clobber": {
       "name": "clobber",
       "description": "hard resets to HEAD of origin and cleans the local repo",
@@ -259,6 +278,30 @@
       "name": "pre-compile",
       "description": "Prepare the project for compilation"
     },
+    "release": {
+      "name": "release",
+      "description": "Prepare a release from \"main\" branch",
+      "env": {
+        "RELEASE": "true"
+      },
+      "steps": [
+        {
+          "exec": "rm -fr dist"
+        },
+        {
+          "spawn": "bump"
+        },
+        {
+          "spawn": "build"
+        },
+        {
+          "spawn": "unbump"
+        },
+        {
+          "exec": "git diff --ignore-space-at-eol --exit-code"
+        }
+      ]
+    },
     "rosetta:extract": {
       "name": "rosetta:extract",
       "description": "Test rosetta extract",
@@ -290,6 +333,24 @@
       "steps": [
         {
           "exec": "jest --watch"
+        }
+      ]
+    },
+    "unbump": {
+      "name": "unbump",
+      "description": "Restores version to 0.0.0",
+      "env": {
+        "OUTFILE": "package.json",
+        "CHANGELOG": "dist/changelog.md",
+        "BUMPFILE": "dist/version.txt",
+        "RELEASETAG": "dist/releasetag.txt",
+        "RELEASE_TAG_PREFIX": "",
+        "BUMP_PACKAGE": "commit-and-tag-version@^12",
+        "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep \"^(feat|fix){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+\""
+      },
+      "steps": [
+        {
+          "builtin": "release/reset-version"
         }
       ]
     },
@@ -343,7 +404,7 @@
           "exec": "npm install"
         },
         {
-          "exec": "npm update @aws-cdk/integ-runner @aws-cdk/integ-tests-alpha @stylistic/eslint-plugin @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk-lib aws-cdk eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii ts-jest ts-node typescript"
+          "exec": "npm update @aws-cdk/integ-runner @aws-cdk/integ-tests-alpha @stylistic/eslint-plugin @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk-lib aws-cdk commit-and-tag-version eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii ts-jest ts-node typescript"
         },
         {
           "exec": "npx projen"
