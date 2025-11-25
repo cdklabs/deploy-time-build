@@ -7,6 +7,7 @@
     ".github/workflows/auto-queue.yml",
     ".github/workflows/build.yml",
     ".github/workflows/pull-request-lint.yml",
+    ".github/workflows/retry-automerge.yml",
     ".github/workflows/upgrade-cdklabs-projen-project-types.yml",
     ".github/workflows/upgrade-dev-deps.yml",
     ".github/workflows/upgrade.yml",

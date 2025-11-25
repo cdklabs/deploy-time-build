@@ -31,6 +31,9 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
+*.js
+*.d.ts
+!test/*.snapshot/**/*
 /test-reports/
 junit.xml
 /coverage/
@@ -47,6 +50,7 @@ tsconfig.json
 !/API.md
 .jsii.tabl.json
 !/rosetta/default.ts-fixture
+!/.github/workflows/retry-automerge.yml
 !/.github/workflows/auto-queue.yml
 !/.github/workflows/upgrade-cdklabs-projen-project-types.yml
 !/.github/workflows/upgrade.yml
