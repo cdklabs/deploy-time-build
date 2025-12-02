@@ -8,7 +8,7 @@ const project = new CdklabsConstructLibrary({
   // we don't strictly guarantee it works in older CDK (integ-runner runs on newer CDK), but hopefully it should.
   cdkVersion: '2.69.0', // C# build fails before this version
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.8.0',
+  jsiiVersion: '~5.9.0',
   name: '@cdklabs/deploy-time-build',
   repositoryUrl: 'https://github.com/cdklabs/deploy-time-build.git',
   packageManager: NodePackageManager.NPM,
