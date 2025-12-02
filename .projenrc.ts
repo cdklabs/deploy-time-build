@@ -11,12 +11,6 @@ const project = new CdklabsConstructLibrary({
   jsiiVersion: '~5.8.0',
   name: '@cdklabs/deploy-time-build',
   repositoryUrl: 'https://github.com/cdklabs/deploy-time-build.git',
-  npmTrustedPublishing: true,
-  publishToPypi: {
-    distName: 'cdklabs.deploy-time-build',
-    module: 'cdklabs.deploy_time_build',
-    trustedPublishing: true,
-  },
   packageManager: NodePackageManager.NPM,
   workflowNodeVersion: '24',
   eslintOptions: {
