@@ -1,3 +1,4 @@
+import { join } from 'path';
 import { IntegTest } from '@aws-cdk/integ-tests-alpha';
 import { Stack, StackProps, App } from 'aws-cdk-lib';
 import { DockerImageAsset } from 'aws-cdk-lib/aws-ecr-assets';
@@ -15,7 +16,7 @@ class TestStack extends Stack {
     {
       const parent = new Construct(this, 'Image1');
       const asset = new DockerImageAsset(parent, 'Image', {
-        directory: '../example/example-image',
+        directory: join(__dirname, '../example/example-image'),
         buildArgs: { DUMMY_FILE_SIZE_MB: '11', HASH: getCrHandlerHash() },
       });
       new SociIndexV2Build(parent, 'Index', {
@@ -28,7 +29,7 @@ class TestStack extends Stack {
     {
       const parent = new Construct(this, 'Image2');
       const asset = new DockerImageAsset(parent, 'Image', {
-        directory: '../example/example-image',
+        directory: join(__dirname, '../example/example-image'),
         buildArgs: { DUMMY_FILE_SIZE_MB: '50' },
       });
       SociIndexV2Build.fromDockerImageAsset(parent, 'Index', asset);

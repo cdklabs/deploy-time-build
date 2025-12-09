@@ -677,7 +677,7 @@ const assetConfig: AssetConfig = { ... }
 | <code><a href="#@cdklabs/deploy-time-build.AssetConfig.property.deployTime">deployTime</a></code> | <code>boolean</code> | Whether or not the asset needs to exist beyond deployment time; |
 | <code><a href="#@cdklabs/deploy-time-build.AssetConfig.property.displayName">displayName</a></code> | <code>string</code> | A display name for this asset. |
 | <code><a href="#@cdklabs/deploy-time-build.AssetConfig.property.readers">readers</a></code> | <code>aws-cdk-lib.aws_iam.IGrantable[]</code> | A list of principals that should be able to read this asset from S3. |
-| <code><a href="#@cdklabs/deploy-time-build.AssetConfig.property.sourceKMSKey">sourceKMSKey</a></code> | <code>aws-cdk-lib.aws_kms.IKey</code> | The ARN of the KMS key used to encrypt the handler code. |
+| <code><a href="#@cdklabs/deploy-time-build.AssetConfig.property.sourceKMSKey">sourceKMSKey</a></code> | <code>aws-cdk-lib.interfaces.aws_kms.IKeyRef</code> | The ARN of the KMS key used to encrypt the handler code. |
 | <code><a href="#@cdklabs/deploy-time-build.AssetConfig.property.path">path</a></code> | <code>string</code> | The disk location of the asset. |
 | <code><a href="#@cdklabs/deploy-time-build.AssetConfig.property.commands">commands</a></code> | <code>string[]</code> | Shell commands executed right after the asset zip is extracted to the build environment. |
 | <code><a href="#@cdklabs/deploy-time-build.AssetConfig.property.extractPath">extractPath</a></code> | <code>string</code> | Relative path from a build directory to the directory where the asset is extracted. |
@@ -853,10 +853,10 @@ You can use `asset.grantRead(principal)` to grant read permissions later.
 ##### `sourceKMSKey`<sup>Optional</sup> <a name="sourceKMSKey" id="@cdklabs/deploy-time-build.AssetConfig.property.sourceKMSKey"></a>
 
 ```typescript
-public readonly sourceKMSKey: IKey;
+public readonly sourceKMSKey: IKeyRef;
 ```
 
-- *Type:* aws-cdk-lib.aws_kms.IKey
+- *Type:* aws-cdk-lib.interfaces.aws_kms.IKeyRef
 - *Default:* the default server-side encryption with Amazon S3 managed keys(SSE-S3) key will be used.
 
 The ARN of the KMS key used to encrypt the handler code.

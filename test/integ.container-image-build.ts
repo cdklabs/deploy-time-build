@@ -1,3 +1,4 @@
+import { join } from 'path';
 import { IntegTest } from '@aws-cdk/integ-tests-alpha';
 import { Stack, StackProps, App } from 'aws-cdk-lib';
 import { Vpc } from 'aws-cdk-lib/aws-ec2';
@@ -18,9 +19,9 @@ class TestStack extends Stack {
       natGateways: 1,
     });
 
-    const image = new ContainerImageBuild(this, 'Build', { directory: '../example/example-image', buildArgs: { DUMMY_FILE_SIZE_MB: '15' } });
+    const image = new ContainerImageBuild(this, 'Build', { directory: join(__dirname, '../example/example-image'), buildArgs: { DUMMY_FILE_SIZE_MB: '15' } });
     const armImage = new ContainerImageBuild(this, 'BuildArm', {
-      directory: '../example/example-image',
+      directory: join(__dirname, '../example/example-image'),
       platform: Platform.LINUX_ARM64,
       repository: image.repository,
       zstdCompression: true,
@@ -40,7 +41,7 @@ class TestStack extends Stack {
     });
 
     const build = new ContainerImageBuild(this, 'BuildVpc', {
-      directory: '../example/example-image',
+      directory: join(__dirname, '../example/example-image'),
       vpc,
       buildArgs: {
         HASH: getCrHandlerHash(),
