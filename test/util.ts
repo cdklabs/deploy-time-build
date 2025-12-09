@@ -11,6 +11,6 @@ import { join } from 'path';
  * custom resource handler code in the properties.
  */
 export const getCrHandlerHash = () => {
-  const handlerFile = readFileSync(join('..', 'lambda', 'trigger-codebuild', 'dist', 'index.js')).toString();
+  const handlerFile = readFileSync(join(__dirname, '..', 'lambda', 'trigger-codebuild', 'dist', 'index.js')).toString();
   return createHash('md5').update(handlerFile).digest('hex');
 };

@@ -1,3 +1,4 @@
+import { join } from 'path';
 import { IntegTest } from '@aws-cdk/integ-tests-alpha';
 import { Stack, StackProps, App, RemovalPolicy } from 'aws-cdk-lib';
 import { BlockPublicAccess, Bucket, BucketEncryption } from 'aws-cdk-lib/aws-s3';
@@ -22,7 +23,7 @@ class TestStack extends Stack {
     new NodejsBuild(this, 'ExampleBuild', {
       assets: [
         {
-          path: '../example/example-app',
+          path: join(__dirname, '../example/example-app'),
           exclude: ['dist'],
         },
       ],
