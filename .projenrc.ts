@@ -1,4 +1,4 @@
-import { CdklabsConstructLibrary } from 'cdklabs-projen-project-types';
+import { CdklabsConstructLibrary, JsiiLanguage } from 'cdklabs-projen-project-types';
 import { NodePackageManager } from 'projen/lib/javascript';
 
 const project = new CdklabsConstructLibrary({
@@ -45,6 +45,7 @@ const project = new CdklabsConstructLibrary({
   },
   upgradeRuntimeDepsAsFix: false,
   description: 'Build during CDK deployment.',
+  jsiiTargetLanguages: [JsiiLanguage.PYTHON, JsiiLanguage.JAVA, JsiiLanguage.GO],
 });
 project.eslint?.addRules({
   '@typescript-eslint/no-unused-vars': 'off',
