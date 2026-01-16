@@ -46,7 +46,7 @@ const project = new CdklabsConstructLibrary({
   },
   upgradeRuntimeDepsAsFix: false,
   description: 'Build during CDK deployment.',
-  jsiiTargetLanguages: [JsiiLanguage.PYTHON, JsiiLanguage.JAVA, JsiiLanguage.GO],
+  jsiiTargetLanguages: [JsiiLanguage.PYTHON, JsiiLanguage.JAVA],
 });
 project.eslint?.addRules({
   '@typescript-eslint/no-unused-vars': 'off',
