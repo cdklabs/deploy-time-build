@@ -3,6 +3,7 @@ import { NodePackageManager } from 'projen/lib/javascript';
 
 const project = new CdklabsConstructLibrary({
   private: false,
+  enablePRAutoMerge: true, // Use GitHub's native merge queue instead of Mergify
   projenrcTs: true,
   author: 'AWS',
   authorAddress: 'aws-cdk-dev@amazon.com',
