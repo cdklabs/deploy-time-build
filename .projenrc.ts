@@ -2,6 +2,8 @@ import { CdklabsConstructLibrary, JsiiLanguage } from 'cdklabs-projen-project-ty
 import { NodePackageManager } from 'projen/lib/javascript';
 
 const project = new CdklabsConstructLibrary({
+  private: false,
+  enablePRAutoMerge: true, // Use GitHub's native merge queue instead of Mergify
   projenrcTs: true,
   author: 'AWS',
   authorAddress: 'aws-cdk-dev@amazon.com',
@@ -45,7 +47,7 @@ const project = new CdklabsConstructLibrary({
   },
   upgradeRuntimeDepsAsFix: false,
   description: 'Build during CDK deployment.',
-  jsiiTargetLanguages: [JsiiLanguage.PYTHON, JsiiLanguage.JAVA, JsiiLanguage.GO],
+  jsiiTargetLanguages: [JsiiLanguage.PYTHON, JsiiLanguage.JAVA],
 });
 project.eslint?.addRules({
   '@typescript-eslint/no-unused-vars': 'off',
