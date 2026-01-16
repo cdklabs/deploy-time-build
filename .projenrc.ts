@@ -2,6 +2,7 @@ import { CdklabsConstructLibrary, JsiiLanguage } from 'cdklabs-projen-project-ty
 import { NodePackageManager } from 'projen/lib/javascript';
 
 const project = new CdklabsConstructLibrary({
+  private: false,
   projenrcTs: true,
   author: 'AWS',
   authorAddress: 'aws-cdk-dev@amazon.com',
