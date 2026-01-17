@@ -24,6 +24,9 @@ const project = new CdklabsConstructLibrary({
     ignorePatterns: ['example/**/*', 'lambda/**/*', 'test/assets/**/*', 'test/*.snapshot/**/*', '*.d.ts'],
   },
   gitignore: ['*.js', '*.d.ts', '!test/*.snapshot/**/*'],
+  npmIgnoreOptions: {
+    ignorePatterns: ['lambda/trigger-codebuild/package-lock.json', 'imgs', 'example'],
+  },
   keywords: ['aws', 'cdk', 'lambda', 'aws-cdk', 'ecr', 'ecs'],
   tsconfigDev: {
     compilerOptions: {
@@ -38,12 +41,7 @@ const project = new CdklabsConstructLibrary({
       noUnusedParameters: false,
     },
   },
-  devDeps: [
-    'cdklabs-projen-project-types',
-    'aws-cdk-lib@^2.159.0',
-    'aws-cdk@^2.159.0',
-    'constructs',
-  ],
+  devDeps: ['cdklabs-projen-project-types', 'aws-cdk-lib@^2.159.0', 'aws-cdk@^2.159.0', 'constructs'],
   peerDependencyOptions: {
     pinnedDevDependency: false,
   },
