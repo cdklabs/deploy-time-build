@@ -1,5 +1,5 @@
 import { CdklabsConstructLibrary, JsiiLanguage } from 'cdklabs-projen-project-types';
-import { NodePackageManager } from 'projen/lib/javascript';
+import { NodePackageManager, UpgradeDependenciesSchedule } from 'projen/lib/javascript';
 
 const project = new CdklabsConstructLibrary({
   private: false,
@@ -8,13 +8,16 @@ const project = new CdklabsConstructLibrary({
   author: 'AWS',
   authorAddress: 'aws-cdk-dev@amazon.com',
   // we don't strictly guarantee it works in older CDK (integ-runner runs on newer CDK), but hopefully it should.
-  cdkVersion: '2.69.0', // C# build fails before this version
+  cdkVersion: '2.38.0',
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.9.0',
   name: '@cdklabs/deploy-time-build',
   repositoryUrl: 'https://github.com/cdklabs/deploy-time-build.git',
   packageManager: NodePackageManager.NPM,
   workflowNodeVersion: '24',
+  jestOptions: {
+    jestVersion: '^29',
+  },
   eslintOptions: {
     dirs: [],
     ignorePatterns: ['example/**/*', 'lambda/**/*', 'test/assets/**/*', 'test/*.snapshot/**/*', '*.d.ts'],
@@ -46,6 +49,12 @@ const project = new CdklabsConstructLibrary({
     pinnedDevDependency: false,
   },
   upgradeRuntimeDepsAsFix: false,
+  depsUpgrade: false,
+  depsUpgradeOptions: {
+    workflowOptions: {
+      schedule: UpgradeDependenciesSchedule.MONTHLY,
+    },
+  },
   description: 'Build during CDK deployment.',
   jsiiTargetLanguages: [JsiiLanguage.PYTHON, JsiiLanguage.JAVA],
 });
