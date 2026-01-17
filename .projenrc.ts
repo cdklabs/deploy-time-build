@@ -1,5 +1,6 @@
 import { CdklabsConstructLibrary, JsiiLanguage } from 'cdklabs-projen-project-types';
 import { NodePackageManager, UpgradeDependenciesSchedule } from 'projen/lib/javascript';
+import { ReleasableCommits } from 'projen/lib/version';
 
 const project = new CdklabsConstructLibrary({
   private: false,
@@ -51,7 +52,8 @@ const project = new CdklabsConstructLibrary({
       schedule: UpgradeDependenciesSchedule.MONTHLY,
     },
   },
-  description: 'Build during CDK deployment.',
+  releasableCommits: ReleasableCommits.everyCommit(),
+  description: 'Run build on CDK deployment time.',
   jsiiTargetLanguages: [JsiiLanguage.PYTHON, JsiiLanguage.JAVA],
 });
 project.eslint?.addRules({
