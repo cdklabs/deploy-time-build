@@ -42,8 +42,6 @@ const project = new CdklabsConstructLibrary({
     'aws-cdk-lib@^2.159.0',
     'aws-cdk@^2.159.0',
     'constructs',
-    '@aws-cdk/integ-runner@^2.159.0-alpha.0',
-    '@aws-cdk/integ-tests-alpha@^2.159.0-alpha.0',
   ],
   peerDependencyOptions: {
     pinnedDevDependency: false,
