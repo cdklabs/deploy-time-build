@@ -48,8 +48,6 @@ const project = new CdklabsConstructLibrary({
   peerDependencyOptions: {
     pinnedDevDependency: false,
   },
-  upgradeRuntimeDepsAsFix: false,
-  depsUpgrade: false,
   depsUpgradeOptions: {
     workflowOptions: {
       schedule: UpgradeDependenciesSchedule.MONTHLY,
