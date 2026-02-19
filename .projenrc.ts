@@ -1,6 +1,10 @@
 import { CdklabsConstructLibrary, JsiiLanguage } from 'cdklabs-projen-project-types';
+import { JobPermission } from 'projen/lib/github/workflows-model';
 import { NodePackageManager, UpgradeDependenciesSchedule } from 'projen/lib/javascript';
 import { ReleasableCommits } from 'projen/lib/version';
+
+const minCdkVersion = '2.38.0';
+const minConstructsVersion = '10.0.5';
 
 const project = new CdklabsConstructLibrary({
   private: false,
@@ -9,7 +13,7 @@ const project = new CdklabsConstructLibrary({
   author: 'AWS',
   authorAddress: 'aws-cdk-dev@amazon.com',
   // we don't strictly guarantee it works in older CDK (integ-runner runs on newer CDK), but hopefully it should.
-  cdkVersion: '2.38.0',
+  cdkVersion: minCdkVersion,
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.9.0',
   name: '@cdklabs/deploy-time-build',
@@ -61,4 +65,42 @@ project.eslint?.addRules({
 project.projectBuild.postCompileTask.prependExec('npm ci && npm run build', {
   cwd: 'lambda/trigger-codebuild',
 });
+// Verify minimum CDK version compatibility
+project.buildWorkflow?.addPostBuildJob('verify-min-cdk-version', {
+  runsOn: ['ubuntu-latest'],
+  permissions: {
+    contents: JobPermission.READ,
+  },
+  steps: [
+    {
+      name: 'Checkout',
+      uses: 'actions/checkout@v4',
+      with: {
+        ref: '${{ github.event.pull_request.head.ref }}',
+        repository: '${{ github.event.pull_request.head.repo.full_name }}',
+      },
+    },
+    {
+      name: 'Setup Node.js',
+      uses: 'actions/setup-node@v4',
+      with: {
+        'node-version': '24',
+      },
+    },
+    {
+      name: 'Install dependencies',
+      run: 'npm ci',
+    },
+    {
+      name: 'Build Lambda handler',
+      run: 'npm ci && npm run build',
+      workingDirectory: 'lambda/trigger-codebuild',
+    },
+    {
+      name: 'Verify minimum CDK version compatibility',
+      run: `./scripts/verify-min-cdk.sh ${minCdkVersion} ${minConstructsVersion}`,
+    },
+  ],
+});
+
 project.synth();
