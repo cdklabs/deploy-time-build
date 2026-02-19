@@ -52,7 +52,7 @@ const project = new CdklabsConstructLibrary({
   },
   releasableCommits: ReleasableCommits.everyCommit(),
   description: 'Run build on CDK deployment time.',
-  jsiiTargetLanguages: [JsiiLanguage.PYTHON, JsiiLanguage.JAVA],
+  jsiiTargetLanguages: [JsiiLanguage.PYTHON],
 });
 project.eslint?.addRules({
   '@typescript-eslint/no-unused-vars': 'off',
