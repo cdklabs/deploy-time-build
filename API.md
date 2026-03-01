@@ -47,6 +47,7 @@ new ContainerImageBuild(scope: Construct, id: string, props: ContainerImageBuild
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/deploy-time-build.ContainerImageBuild.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/deploy-time-build.ContainerImageBuild.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/deploy-time-build.ContainerImageBuild.toEcsDockerImageCode">toEcsDockerImageCode</a></code> | Get the instance of {@link ContainerImage} for an ECS task definition. |
 | <code><a href="#@cdklabs/deploy-time-build.ContainerImageBuild.toLambdaDockerImageCode">toLambdaDockerImageCode</a></code> | Get the instance of {@link DockerImageCode} for a Lambda function image. |
 
@@ -59,6 +60,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/deploy-time-build.ContainerImageBuild.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/deploy-time-build.ContainerImageBuild.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `toEcsDockerImageCode` <a name="toEcsDockerImageCode" id="@cdklabs/deploy-time-build.ContainerImageBuild.toEcsDockerImageCode"></a>
 
@@ -236,6 +258,7 @@ new NodejsBuild(scope: Construct, id: string, props: NodejsBuildProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/deploy-time-build.NodejsBuild.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/deploy-time-build.NodejsBuild.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -246,6 +269,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/deploy-time-build.NodejsBuild.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/deploy-time-build.NodejsBuild.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -367,6 +411,7 @@ new SociIndexBuild(scope: Construct, id: string, props: SociIndexBuildProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexBuild.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/deploy-time-build.SociIndexBuild.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -377,6 +422,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### ~~`with`~~ <a name="with" id="@cdklabs/deploy-time-build.SociIndexBuild.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/deploy-time-build.SociIndexBuild.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -517,6 +583,7 @@ new SociIndexV2Build(scope: Construct, id: string, props: SociIndexV2BuildProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexV2Build.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/deploy-time-build.SociIndexV2Build.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexV2Build.toEcsDockerImageCode">toEcsDockerImageCode</a></code> | Get the instance of image embedded with SOCI v2 index for an ECS task definition. |
 
 ---
@@ -528,6 +595,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/deploy-time-build.SociIndexV2Build.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/deploy-time-build.SociIndexV2Build.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `toEcsDockerImageCode` <a name="toEcsDockerImageCode" id="@cdklabs/deploy-time-build.SociIndexV2Build.toEcsDockerImageCode"></a>
 
