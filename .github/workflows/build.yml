@@ -189,4 +189,4 @@ jobs:
         run: npm ci && npm run build
         working-directory: lambda/trigger-codebuild
       - name: Verify minimum CDK version compatibility
-        run: ./scripts/verify-min-cdk.sh 2.38.0 10.0.5
+        run: ./scripts/verify-min-cdk.sh 2.38.0 10.5.1

@@ -4,7 +4,7 @@ import { NodePackageManager, UpgradeDependenciesSchedule } from 'projen/lib/java
 import { ReleasableCommits } from 'projen/lib/version';
 
 const minCdkVersion = '2.38.0';
-const minConstructsVersion = '10.0.5';
+const minConstructsVersion = '10.5.1';
 
 const project = new CdklabsConstructLibrary({
   private: false,
