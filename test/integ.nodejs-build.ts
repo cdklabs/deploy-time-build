@@ -35,7 +35,7 @@ class TestStack extends Stack {
         VITE_SOME_TOKEN: dstBucket.bucketName,
         HASH: getCrHandlerHash(),
       },
-      nodejsVersion: 20,
+      nodejsVersion: 24,
       outputEnvFile: true,
     });
   }
