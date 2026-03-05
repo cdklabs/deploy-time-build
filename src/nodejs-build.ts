@@ -83,10 +83,9 @@ export interface NodejsBuildProps {
    */
   readonly outputSourceDirectory: string;
   /**
-   * The version of Node.js to use in a build environment. Available versions: 12, 14, 16, 18, 20, and 22.
-   * @default 18
+   * The version of Node.js to use in a build environment. Available versions: 12, 14, 16, 18, 20, 22, and 24.
    */
-  readonly nodejsVersion?: number;
+  readonly nodejsVersion: number;
   /**
    * If true, a .env file is uploaded to an S3 bucket with values of `buildEnvironment` property.
    * You can copy it to your local machine by running the command in the stack output.
@@ -130,7 +129,7 @@ export class NodejsBuild extends Construct implements IGrantable {
       timeout: Duration.minutes(5),
     });
 
-    const nodejsVersion = props.nodejsVersion ?? 18;
+    const nodejsVersion = props.nodejsVersion;
     let buildImage = 'aws/codebuild/standard:7.0';
     // See: https://docs.aws.amazon.com/codebuild/latest/userguide/available-runtimes.html#linux-runtimes
     switch (nodejsVersion) {
@@ -144,10 +143,11 @@ export class NodejsBuild extends Construct implements IGrantable {
       case 18:
       case 20:
       case 22:
+      case 24:
         buildImage = 'aws/codebuild/standard:7.0';
         break;
       default:
-        Annotations.of(this).addWarning(`Possibly unsupported Node.js version: ${nodejsVersion}. Currently 12, 14, 16, 18, 20, and 22 are supported.`);
+        Annotations.of(this).addWarning(`Possibly unsupported Node.js version: ${nodejsVersion}. Currently 12, 14, 16, 18, 20, 22, and 24 are supported.`);
     }
 
     const outputEnvFile = props.outputEnvFile ?? false;
