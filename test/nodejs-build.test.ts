@@ -56,6 +56,7 @@ describe('NodejsBuild', () => {
         ],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -76,6 +77,7 @@ describe('NodejsBuild', () => {
         ],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -97,6 +99,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         workingDirectory: 'my-app/packages/frontend',
         outputSourceDirectory: 'build',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -122,6 +125,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         workingDirectory: 'app2',
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -139,6 +143,7 @@ describe('NodejsBuild', () => {
         assets: [{ path: 'test-asset' }],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -154,6 +159,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         outputSourceDirectory: 'dist',
         buildCommands: ['npm ci', 'npm run build:prod'],
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -172,6 +178,7 @@ describe('NodejsBuild', () => {
           NODE_ENV: 'production',
           API_URL: 'https://api.example.com',
         },
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -190,6 +197,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         outputSourceDirectory: 'dist',
         destinationKeyPrefix: 'my-prefix/',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -204,6 +212,7 @@ describe('NodejsBuild', () => {
         assets: [{ path: 'test-asset' }],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -224,6 +233,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         outputSourceDirectory: 'dist',
         distribution,
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -238,6 +248,7 @@ describe('NodejsBuild', () => {
         assets: [{ path: 'test-asset' }],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -253,6 +264,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         outputSourceDirectory: 'dist',
         outputEnvFile: true,
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -275,6 +287,7 @@ describe('NodejsBuild', () => {
         ],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -305,6 +318,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         workingDirectory: 'frontend',
         outputSourceDirectory: 'build',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -330,6 +344,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         outputSourceDirectory: 'dist',
         cache: CacheType.S3,
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -359,6 +374,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         outputSourceDirectory: 'dist',
         cache: CacheType.LOCAL,
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -376,6 +392,7 @@ describe('NodejsBuild', () => {
         assets: [{ path: 'test-asset' }],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -395,6 +412,7 @@ describe('NodejsBuild', () => {
         assets: [{ path: 'test-asset' }],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -413,6 +431,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         outputSourceDirectory: 'dist',
         computeType: ComputeType.MEDIUM,
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -430,6 +449,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         outputSourceDirectory: 'dist',
         computeType: ComputeType.LARGE,
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -465,6 +485,7 @@ describe('NodejsBuild', () => {
         assets: [{ path: 'test-asset' }],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -483,6 +504,7 @@ describe('NodejsBuild', () => {
         assets: [{ path: 'test-asset' }],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -506,6 +528,7 @@ describe('NodejsBuild', () => {
         assets: [{ path: 'test-asset' }],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -546,6 +569,7 @@ describe('NodejsBuild', () => {
         destinationBucket,
         outputSourceDirectory: 'dist',
         distribution,
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);
@@ -568,6 +592,7 @@ describe('NodejsBuild', () => {
         assets: [{ path: 'test-asset' }],
         destinationBucket,
         outputSourceDirectory: 'dist',
+        nodejsVersion: 18,
       });
 
       const template = Template.fromStack(stack);

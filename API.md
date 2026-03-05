@@ -1493,6 +1493,7 @@ const nodejsBuildProps: NodejsBuildProps = { ... }
 | --- | --- | --- |
 | <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.assets">assets</a></code> | <code><a href="#@cdklabs/deploy-time-build.AssetConfig">AssetConfig</a>[]</code> | The AssetProps from which s3-assets are created and copied to the build environment. |
 | <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.destinationBucket">destinationBucket</a></code> | <code>aws-cdk-lib.aws_s3.IBucket</code> | S3 Bucket to which your build artifacts are finally deployed. |
+| <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.nodejsVersion">nodejsVersion</a></code> | <code>number</code> | The version of Node.js to use in a build environment. Available versions: 12, 14, 16, 18, 20, 22, and 24. |
 | <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.outputSourceDirectory">outputSourceDirectory</a></code> | <code>string</code> | Relative path from the working directory to the directory where the build artifacts are output. |
 | <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.buildCommands">buildCommands</a></code> | <code>string[]</code> | Shell commands to build your project. |
 | <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.buildEnvironment">buildEnvironment</a></code> | <code>{[ key: string ]: string}</code> | Environment variables injected to the build environment. |
@@ -1501,7 +1502,6 @@ const nodejsBuildProps: NodejsBuildProps = { ... }
 | <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.destinationKeyPrefix">destinationKeyPrefix</a></code> | <code>string</code> | Key prefix to deploy your build artifact. |
 | <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.distribution">distribution</a></code> | <code>aws-cdk-lib.aws_cloudfront.IDistribution</code> | The distribution you are using to publish you build artifact. |
 | <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.excludeCommonFiles">excludeCommonFiles</a></code> | <code>boolean</code> | If true, common unnecessary files/directories such as .DS_Store, .git, node_modules, etc are excluded from the assets by default. |
-| <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.nodejsVersion">nodejsVersion</a></code> | <code>number</code> | The version of Node.js to use in a build environment. Available versions: 12, 14, 16, 18, 20, and 22. |
 | <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.outputEnvFile">outputEnvFile</a></code> | <code>boolean</code> | If true, a .env file is uploaded to an S3 bucket with values of `buildEnvironment` property. You can copy it to your local machine by running the command in the stack output. |
 | <code><a href="#@cdklabs/deploy-time-build.NodejsBuildProps.property.workingDirectory">workingDirectory</a></code> | <code>string</code> | Relative path from the build directory to the directory where build commands run. |
 
@@ -1528,6 +1528,18 @@ public readonly destinationBucket: IBucket;
 - *Type:* aws-cdk-lib.aws_s3.IBucket
 
 S3 Bucket to which your build artifacts are finally deployed.
+
+---
+
+##### `nodejsVersion`<sup>Required</sup> <a name="nodejsVersion" id="@cdklabs/deploy-time-build.NodejsBuildProps.property.nodejsVersion"></a>
+
+```typescript
+public readonly nodejsVersion: number;
+```
+
+- *Type:* number
+
+The version of Node.js to use in a build environment. Available versions: 12, 14, 16, 18, 20, 22, and 24.
 
 ---
 
@@ -1637,19 +1649,6 @@ public readonly excludeCommonFiles: boolean;
 - *Default:* true
 
 If true, common unnecessary files/directories such as .DS_Store, .git, node_modules, etc are excluded from the assets by default.
-
----
-
-##### `nodejsVersion`<sup>Optional</sup> <a name="nodejsVersion" id="@cdklabs/deploy-time-build.NodejsBuildProps.property.nodejsVersion"></a>
-
-```typescript
-public readonly nodejsVersion: number;
-```
-
-- *Type:* number
-- *Default:* 18
-
-The version of Node.js to use in a build environment. Available versions: 12, 14, 16, 18, 20, and 22.
 
 ---
 
