@@ -41,6 +41,7 @@ new NodejsBuild(this, 'ExampleBuild', {
     buildEnvironment: {
         VITE_API_ENDPOINT: api.url,
     },
+    nodejsVersion: 24,
 });
 ```
 
@@ -66,6 +67,7 @@ new NodejsBuild(this, 'ExampleBuild', {
     destinationBucket,
     distribution,
     outputSourceDirectory: 'dist',
+    nodejsVersion: 24,
 });
 ```
 
@@ -122,6 +124,7 @@ new NodejsBuild(this, 'ExampleBuild', {
     destinationBucket,
     outputSourceDirectory: 'dist',
     cache: CacheType.S3, // or CacheType.LOCAL
+    nodejsVersion: 24,
 });
 ```
 
@@ -144,6 +147,7 @@ new NodejsBuild(this, 'ExampleBuild', {
     destinationBucket,
     outputSourceDirectory: 'dist',
     computeType: ComputeType.MEDIUM,
+    nodejsVersion: 24,
 });
 ```
 
@@ -167,6 +171,7 @@ new NodejsBuild(this, 'ExampleBuild', {
     destinationBucket,
     distribution,
     outputSourceDirectory: 'dist',
+    nodejsVersion: 24,
 });
 ```
 
