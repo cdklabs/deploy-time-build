@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { IntegTest } from '@aws-cdk/integ-tests-alpha';
 import { Stack, StackProps, App } from 'aws-cdk-lib';
-import { LinuxBuildImage, ComputeType } from 'aws-cdk-lib/aws-codebuild';
+import { ComputeType } from 'aws-cdk-lib/aws-codebuild';
 import { DockerImageAsset } from 'aws-cdk-lib/aws-ecr-assets';
 import { Construct } from 'constructs';
 import { SociIndexV2Build } from '../src';
@@ -36,7 +36,7 @@ class TestStack extends Stack {
       SociIndexV2Build.fromDockerImageAsset(parent, 'Index', asset);
     }
 
-    // Test custom build environment
+    // Test custom computeType
     {
       const parent = new Construct(this, 'ImageCustomEnv');
       const asset = new DockerImageAsset(parent, 'Image', {
@@ -47,29 +47,18 @@ class TestStack extends Stack {
         inputImageTag: asset.assetHash,
         outputImageTag: `${asset.assetHash}-soci-env`,
         repository: asset.repository,
-        environment: {
-          buildImage: LinuxBuildImage.fromCodeBuildImageId('aws/codebuild/standard:7.0'),
-          computeType: ComputeType.SMALL,
-          privileged: true,
-          environmentVariables: {
-            HELLO: { value: 'WORLD' },
-          },
-        },
+        computeType: ComputeType.SMALL,
       });
     }
 
-    // Test fromDockerImageAsset with environment
+    // Test fromDockerImageAsset with computeType
     {
       const parent = new Construct(this, 'ImageFromAssetAndEnv');
       const asset = new DockerImageAsset(parent, 'Image', {
         directory: join(__dirname, '../example/example-image'),
         buildArgs: { DUMMY_FILE_SIZE_MB: '21' },
       });
-      SociIndexV2Build.fromDockerImageAsset(parent, 'Index', asset, {
-        buildImage: LinuxBuildImage.fromCodeBuildImageId('aws/codebuild/standard:7.0'),
-        computeType: ComputeType.LARGE,
-        privileged: false,
-      });
+      SociIndexV2Build.fromDockerImageAsset(parent, 'Index', asset, ComputeType.LARGE);
     }
   }
 }

@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { CustomResource, Duration } from 'aws-cdk-lib';
-import { BuildSpec, LinuxBuildImage, BuildEnvironment } from 'aws-cdk-lib/aws-codebuild';
+import { BuildSpec, LinuxBuildImage, ComputeType } from 'aws-cdk-lib/aws-codebuild';
 import { IRepository } from 'aws-cdk-lib/aws-ecr';
 import { DockerImageAsset } from 'aws-cdk-lib/aws-ecr-assets';
 import { ContainerImage } from 'aws-cdk-lib/aws-ecs';
@@ -31,13 +31,11 @@ export interface SociIndexV2BuildProps {
   readonly outputImageTag?: string;
 
   /**
-   * Optional: Override the entire CodeBuild environment configuration for the build.
-   * See https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_codebuild.BuildEnvironment.html
-   * for possible values.
+   * The compute type to use for the CodeBuild project.
    *
-   * If not specified, a default environment using the standard:7.0 image is used.
+   * @default ComputeType.SMALL
    */
-  readonly environment?: BuildEnvironment;
+  readonly computeType?: ComputeType;
 }
 
 /**
@@ -53,12 +51,12 @@ export class SociIndexV2Build extends Construct {
     scope: Construct,
     id: string,
     imageAsset: DockerImageAsset,
-    environment?: BuildEnvironment
+    computeType?: ComputeType
   ) {
     return new SociIndexV2Build(scope, id, {
       repository: imageAsset.repository,
       inputImageTag: imageAsset.assetHash,
-      environment,
+      computeType,
     });
   }
 
@@ -90,7 +88,10 @@ export class SociIndexV2Build extends Construct {
     const project = new SingletonProject(this, 'Project', {
       uuid: 'e7e8a038-e0e4-4f55-8114-cdd6523ad08f', // generated for this construct
       projectPurpose: 'SociIndexV2Build',
-      environment: props.environment ?? defaultEnvironment,
+      environment: {
+        buildImage: LinuxBuildImage.fromCodeBuildImageId('aws/codebuild/standard:7.0'),
+        computeType: props.computeType,
+      },
       buildSpec: BuildSpec.fromObject({
         version: '0.2',
         phases: {

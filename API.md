@@ -674,7 +674,7 @@ Any object.
 ```typescript
 import { SociIndexV2Build } from '@cdklabs/deploy-time-build'
 
-SociIndexV2Build.fromDockerImageAsset(scope: Construct, id: string, imageAsset: DockerImageAsset, environment?: BuildEnvironment)
+SociIndexV2Build.fromDockerImageAsset(scope: Construct, id: string, imageAsset: DockerImageAsset, computeType?: ComputeType)
 ```
 
 A utility method to create a SociIndexBuild construct from a DockerImageAsset instance.
@@ -697,9 +697,9 @@ A utility method to create a SociIndexBuild construct from a DockerImageAsset in
 
 ---
 
-###### `environment`<sup>Optional</sup> <a name="environment" id="@cdklabs/deploy-time-build.SociIndexV2Build.fromDockerImageAsset.parameter.environment"></a>
+###### `computeType`<sup>Optional</sup> <a name="computeType" id="@cdklabs/deploy-time-build.SociIndexV2Build.fromDockerImageAsset.parameter.computeType"></a>
 
-- *Type:* aws-cdk-lib.aws_codebuild.BuildEnvironment
+- *Type:* aws-cdk-lib.aws_codebuild.ComputeType
 
 ---
 
@@ -1746,7 +1746,7 @@ const sociIndexV2BuildProps: SociIndexV2BuildProps = { ... }
 | --- | --- | --- |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.inputImageTag">inputImageTag</a></code> | <code>string</code> | The tag of the container image you want to build index for. |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.repository">repository</a></code> | <code>aws-cdk-lib.aws_ecr.IRepository</code> | The ECR repository your container image is stored. |
-| <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.environment">environment</a></code> | <code>aws-cdk-lib.aws_codebuild.BuildEnvironment</code> | Optional: Override the entire CodeBuild environment configuration for the build. See https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_codebuild.BuildEnvironment.html for possible values. |
+| <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.computeType">computeType</a></code> | <code>aws-cdk-lib.aws_codebuild.ComputeType</code> | The compute type to use for the CodeBuild project. |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.outputImageTag">outputImageTag</a></code> | <code>string</code> | The tag of the output container image embedded with SOCI index. |
 
 ---
@@ -1778,17 +1778,16 @@ The index artifact will be uploaded to this repository.
 
 ---
 
-##### `environment`<sup>Optional</sup> <a name="environment" id="@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.environment"></a>
+##### `computeType`<sup>Optional</sup> <a name="computeType" id="@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.computeType"></a>
 
 ```typescript
-public readonly environment: BuildEnvironment;
+public readonly computeType: ComputeType;
 ```
 
-- *Type:* aws-cdk-lib.aws_codebuild.BuildEnvironment
+- *Type:* aws-cdk-lib.aws_codebuild.ComputeType
+- *Default:* ComputeType.SMALL
 
-Optional: Override the entire CodeBuild environment configuration for the build. See https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_codebuild.BuildEnvironment.html for possible values.
-
-If not specified, a default environment using the standard:7.0 image is used.
+The compute type to use for the CodeBuild project.
 
 ---
 

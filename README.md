@@ -231,39 +231,25 @@ taskDefinition.addContainer('main', {
 const sociIndexFromAsset = SociIndexV2Build.fromDockerImageAsset(this, 'SociV2Index2', asset);
 ```
 
-#### Override the CodeBuild environment for building SOCI indices
+#### Override the compute type for building SOCI indices
 
-From v2, `SociIndexV2Build` supports overriding the **entire CodeBuild environment**.  
-This provides flexibility for custom images, compute type, or environment variables.
-
-**You can pass the environment using the `environment` property, e.g.:**
+You can specify the compute type for the CodeBuild project using the `computeType` property:
 
 ```ts
 import { SociIndexV2Build } from '@cdklabs/deploy-time-build';
-import { LinuxBuildImage, ComputeType } from 'aws-cdk-lib/aws-codebuild';
+import { ComputeType } from 'aws-cdk-lib/aws-codebuild';
 
 const asset = new DockerImageAsset(this, 'Image', { directory: 'example-image' });
 const sociIndex = new SociIndexV2Build(this, 'SociV2Index', {
   repository: asset.repository,
   inputImageTag: asset.assetHash,
   outputImageTag: `${asset.assetHash}-soci`,
-  environment: {
-    buildImage: LinuxBuildImage.STANDARD_7_0,
-    computeType: ComputeType.LARGE,
-    privileged: true, // Docker-in-Docker if needed
-    environmentVariables: {
-      'MY_VAR': { value: 'VAL' }
-    }
-  }
+  computeType: ComputeType.LARGE,
 });
 
 // Or create from DockerImageAsset using utility method
 
-const sociIndexFromAsset = SociIndexV2Build.fromDockerImageAsset(this, 'SociV2Index2', asset, {
-  buildImage: LinuxBuildImage.STANDARD_7_0,
-  computeType: ComputeType.SMALL,
-  privileged: false,
-});
+const sociIndexFromAsset = SociIndexV2Build.fromDockerImageAsset(this, 'SociV2Index2', asset, ComputeType.SMALL);
 ```
 
 The `SociIndexV2Build` construct:
