@@ -674,7 +674,7 @@ Any object.
 ```typescript
 import { SociIndexV2Build } from '@cdklabs/deploy-time-build'
 
-SociIndexV2Build.fromDockerImageAsset(scope: Construct, id: string, imageAsset: DockerImageAsset)
+SociIndexV2Build.fromDockerImageAsset(scope: Construct, id: string, imageAsset: DockerImageAsset, environment?: BuildEnvironment)
 ```
 
 A utility method to create a SociIndexBuild construct from a DockerImageAsset instance.
@@ -694,6 +694,12 @@ A utility method to create a SociIndexBuild construct from a DockerImageAsset in
 ###### `imageAsset`<sup>Required</sup> <a name="imageAsset" id="@cdklabs/deploy-time-build.SociIndexV2Build.fromDockerImageAsset.parameter.imageAsset"></a>
 
 - *Type:* aws-cdk-lib.aws_ecr_assets.DockerImageAsset
+
+---
+
+###### `environment`<sup>Optional</sup> <a name="environment" id="@cdklabs/deploy-time-build.SociIndexV2Build.fromDockerImageAsset.parameter.environment"></a>
+
+- *Type:* aws-cdk-lib.aws_codebuild.BuildEnvironment
 
 ---
 
@@ -1740,6 +1746,7 @@ const sociIndexV2BuildProps: SociIndexV2BuildProps = { ... }
 | --- | --- | --- |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.inputImageTag">inputImageTag</a></code> | <code>string</code> | The tag of the container image you want to build index for. |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.repository">repository</a></code> | <code>aws-cdk-lib.aws_ecr.IRepository</code> | The ECR repository your container image is stored. |
+| <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.environment">environment</a></code> | <code>aws-cdk-lib.aws_codebuild.BuildEnvironment</code> | Optional: Override the entire CodeBuild environment configuration for the build. See https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_codebuild.BuildEnvironment.html for possible values. |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.outputImageTag">outputImageTag</a></code> | <code>string</code> | The tag of the output container image embedded with SOCI index. |
 
 ---
@@ -1768,6 +1775,20 @@ The ECR repository your container image is stored.
 
 You can only specify a repository in the same environment (account/region).
 The index artifact will be uploaded to this repository.
+
+---
+
+##### `environment`<sup>Optional</sup> <a name="environment" id="@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.environment"></a>
+
+```typescript
+public readonly environment: BuildEnvironment;
+```
+
+- *Type:* aws-cdk-lib.aws_codebuild.BuildEnvironment
+
+Optional: Override the entire CodeBuild environment configuration for the build. See https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_codebuild.BuildEnvironment.html for possible values.
+
+If not specified, a default environment using the standard:7.0 image is used.
 
 ---
 

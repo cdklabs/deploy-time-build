@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { CustomResource, Duration } from 'aws-cdk-lib';
-import { BuildSpec, LinuxBuildImage } from 'aws-cdk-lib/aws-codebuild';
+import { BuildSpec, LinuxBuildImage, BuildEnvironment } from 'aws-cdk-lib/aws-codebuild';
 import { IRepository } from 'aws-cdk-lib/aws-ecr';
 import { DockerImageAsset } from 'aws-cdk-lib/aws-ecr-assets';
 import { ContainerImage } from 'aws-cdk-lib/aws-ecs';
@@ -29,6 +29,15 @@ export interface SociIndexV2BuildProps {
    * @default `${inputImageTag}-soci`
    */
   readonly outputImageTag?: string;
+
+  /**
+   * Optional: Override the entire CodeBuild environment configuration for the build.
+   * See https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_codebuild.BuildEnvironment.html
+   * for possible values.
+   *
+   * If not specified, a default environment using the standard:7.0 image is used.
+   */
+  readonly environment?: BuildEnvironment;
 }
 
 /**
@@ -40,10 +49,16 @@ export class SociIndexV2Build extends Construct {
   /**
    * A utility method to create a SociIndexBuild construct from a DockerImageAsset instance.
    */
-  public static fromDockerImageAsset(scope: Construct, id: string, imageAsset: DockerImageAsset) {
+  public static fromDockerImageAsset(
+    scope: Construct,
+    id: string,
+    imageAsset: DockerImageAsset,
+    environment?: BuildEnvironment
+  ) {
     return new SociIndexV2Build(scope, id, {
       repository: imageAsset.repository,
       inputImageTag: imageAsset.assetHash,
+      environment,
     });
   }
 
@@ -68,10 +83,14 @@ export class SociIndexV2Build extends Construct {
       timeout: Duration.minutes(5),
     });
 
+    const defaultEnvironment: BuildEnvironment = {
+      buildImage: LinuxBuildImage.fromCodeBuildImageId('aws/codebuild/standard:7.0'),
+    };
+
     const project = new SingletonProject(this, 'Project', {
       uuid: 'e7e8a038-e0e4-4f55-8114-cdd6523ad08f', // generated for this construct
       projectPurpose: 'SociIndexV2Build',
-      environment: { buildImage: LinuxBuildImage.fromCodeBuildImageId('aws/codebuild/standard:7.0') },
+      environment: props.environment ?? defaultEnvironment,
       buildSpec: BuildSpec.fromObject({
         version: '0.2',
         phases: {
