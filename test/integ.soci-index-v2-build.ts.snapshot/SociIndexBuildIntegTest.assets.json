@@ -15,16 +15,16 @@
         }
       }
     },
-    "5ef320779b948ee37a68bcea4dfa768272b1b52082940b7c0bda1fda8b0cc638": {
+    "be80a4dde767c11aa3b5d31c8a220be41b1d775b78f83883d7b986f4e3484f79": {
       "displayName": "SociIndexBuildIntegTest Template",
       "source": {
         "path": "SociIndexBuildIntegTest.template.json",
         "packaging": "file"
       },
       "destinations": {
-        "current_account-current_region-46ed4098": {
+        "current_account-current_region-79d1f5aa": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "5ef320779b948ee37a68bcea4dfa768272b1b52082940b7c0bda1fda8b0cc638.json",
+          "objectKey": "be80a4dde767c11aa3b5d31c8a220be41b1d775b78f83883d7b986f4e3484f79.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
@@ -76,22 +76,6 @@
         "current_account-current_region-8b018b7b": {
           "repositoryName": "cdk-hnb659fds-container-assets-${AWS::AccountId}-${AWS::Region}",
           "imageTag": "f169cb23854b4d08dd380e999944f76b313afd072dc39c875befdef94c7e9245",
-          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-image-publishing-role-${AWS::AccountId}-${AWS::Region}"
-        }
-      }
-    },
-    "cc61e365b0cb9083e5ca7ced7775894bc301993033e18633d4dbdd40e45469ee": {
-      "displayName": "ImageFromAssetAndEnv/Image",
-      "source": {
-        "directory": "asset.cc61e365b0cb9083e5ca7ced7775894bc301993033e18633d4dbdd40e45469ee",
-        "dockerBuildArgs": {
-          "DUMMY_FILE_SIZE_MB": "21"
-        }
-      },
-      "destinations": {
-        "current_account-current_region-271dee1c": {
-          "repositoryName": "cdk-hnb659fds-container-assets-${AWS::AccountId}-${AWS::Region}",
-          "imageTag": "cc61e365b0cb9083e5ca7ced7775894bc301993033e18633d4dbdd40e45469ee",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-image-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }

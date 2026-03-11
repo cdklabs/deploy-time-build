@@ -674,7 +674,7 @@ Any object.
 ```typescript
 import { SociIndexV2Build } from '@cdklabs/deploy-time-build'
 
-SociIndexV2Build.fromDockerImageAsset(scope: Construct, id: string, imageAsset: DockerImageAsset, computeType?: ComputeType)
+SociIndexV2Build.fromDockerImageAsset(scope: Construct, id: string, imageAsset: DockerImageAsset)
 ```
 
 A utility method to create a SociIndexBuild construct from a DockerImageAsset instance.
@@ -694,12 +694,6 @@ A utility method to create a SociIndexBuild construct from a DockerImageAsset in
 ###### `imageAsset`<sup>Required</sup> <a name="imageAsset" id="@cdklabs/deploy-time-build.SociIndexV2Build.fromDockerImageAsset.parameter.imageAsset"></a>
 
 - *Type:* aws-cdk-lib.aws_ecr_assets.DockerImageAsset
-
----
-
-###### `computeType`<sup>Optional</sup> <a name="computeType" id="@cdklabs/deploy-time-build.SociIndexV2Build.fromDockerImageAsset.parameter.computeType"></a>
-
-- *Type:* aws-cdk-lib.aws_codebuild.ComputeType
 
 ---
 

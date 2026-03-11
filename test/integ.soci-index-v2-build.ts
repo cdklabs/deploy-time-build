@@ -47,18 +47,8 @@ class TestStack extends Stack {
         inputImageTag: asset.assetHash,
         outputImageTag: `${asset.assetHash}-soci-env`,
         repository: asset.repository,
-        computeType: ComputeType.SMALL,
+        computeType: ComputeType.LARGE,
       });
-    }
-
-    // Test fromDockerImageAsset with computeType
-    {
-      const parent = new Construct(this, 'ImageFromAssetAndEnv');
-      const asset = new DockerImageAsset(parent, 'Image', {
-        directory: join(__dirname, '../example/example-image'),
-        buildArgs: { DUMMY_FILE_SIZE_MB: '21' },
-      });
-      SociIndexV2Build.fromDockerImageAsset(parent, 'Index', asset, ComputeType.LARGE);
     }
   }
 }

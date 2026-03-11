@@ -231,27 +231,6 @@ taskDefinition.addContainer('main', {
 const sociIndexFromAsset = SociIndexV2Build.fromDockerImageAsset(this, 'SociV2Index2', asset);
 ```
 
-#### Override the compute type for building SOCI indices
-
-You can specify the compute type for the CodeBuild project using the `computeType` property:
-
-```ts
-import { SociIndexV2Build } from '@cdklabs/deploy-time-build';
-import { ComputeType } from 'aws-cdk-lib/aws-codebuild';
-
-const asset = new DockerImageAsset(this, 'Image', { directory: 'example-image' });
-const sociIndex = new SociIndexV2Build(this, 'SociV2Index', {
-  repository: asset.repository,
-  inputImageTag: asset.assetHash,
-  outputImageTag: `${asset.assetHash}-soci`,
-  computeType: ComputeType.LARGE,
-});
-
-// Or create from DockerImageAsset using utility method
-
-const sociIndexFromAsset = SociIndexV2Build.fromDockerImageAsset(this, 'SociV2Index2', asset, ComputeType.SMALL);
-```
-
 The `SociIndexV2Build` construct:
 - Takes an input container image and builds a SOCI v2 index for it
 - Outputs a new image tag with the embedded SOCI index

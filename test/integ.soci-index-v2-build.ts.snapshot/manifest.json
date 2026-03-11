@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/5ef320779b948ee37a68bcea4dfa768272b1b52082940b7c0bda1fda8b0cc638.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/be80a4dde767c11aa3b5d31c8a220be41b1d775b78f83883d7b986f4e3484f79.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -132,14 +132,6 @@
                 {}
               ]
             }
-          },
-          {
-            "type": "aws:cdk:analytics:method",
-            "data": {
-              "addToPrincipalPolicy": [
-                {}
-              ]
-            }
           }
         ],
         "/SociIndexBuildIntegTest/DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3/ServiceRole/ImportServiceRole": [
@@ -172,14 +164,6 @@
             "data": {
               "attachToRole": [
                 "*"
-              ]
-            }
-          },
-          {
-            "type": "aws:cdk:analytics:method",
-            "data": {
-              "addStatements": [
-                {}
               ]
             }
           },
@@ -246,7 +230,8 @@
                   "imagePullPrincipalType": "CODEBUILD",
                   "secretsManagerCredentials": "*",
                   "repository": "*"
-                }
+                },
+                "computeType": "*"
               },
               "buildSpec": "*"
             }
@@ -284,30 +269,6 @@
             "data": {
               "attachInlinePolicy": [
                 "*"
-              ]
-            }
-          },
-          {
-            "type": "aws:cdk:analytics:method",
-            "data": {
-              "addToPrincipalPolicy": [
-                {}
-              ]
-            }
-          },
-          {
-            "type": "aws:cdk:analytics:method",
-            "data": {
-              "addToPrincipalPolicy": [
-                {}
-              ]
-            }
-          },
-          {
-            "type": "aws:cdk:analytics:method",
-            "data": {
-              "addToPrincipalPolicy": [
-                {}
               ]
             }
           },
@@ -512,30 +473,6 @@
                 {}
               ]
             }
-          },
-          {
-            "type": "aws:cdk:analytics:method",
-            "data": {
-              "addStatements": [
-                {}
-              ]
-            }
-          },
-          {
-            "type": "aws:cdk:analytics:method",
-            "data": {
-              "addStatements": [
-                {}
-              ]
-            }
-          },
-          {
-            "type": "aws:cdk:analytics:method",
-            "data": {
-              "addStatements": [
-                {}
-              ]
-            }
           }
         ],
         "/SociIndexBuildIntegTest/SociIndexV2Builde7e8a038e0e44f558114cdd6523ad08famd64/Role/DefaultPolicy/Resource": [
@@ -614,39 +551,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ImageCustomEnvIndexE79B3BC5"
-          }
-        ],
-        "/SociIndexBuildIntegTest/ImageFromAssetAndEnv/Index/CustomResourceHandler": [
-          {
-            "type": "aws:cdk:analytics:construct",
-            "data": {
-              "runtime": "*",
-              "code": "*",
-              "handler": "*",
-              "uuid": "*",
-              "lambdaPurpose": "*",
-              "timeout": "*"
-            }
-          }
-        ],
-        "/SociIndexBuildIntegTest/ImageFromAssetAndEnv/Index/Resource": [
-          {
-            "type": "aws:cdk:analytics:construct",
-            "data": "*"
-          },
-          {
-            "type": "aws:cdk:analytics:method",
-            "data": "*"
-          },
-          {
-            "type": "aws:cdk:analytics:method",
-            "data": "*"
-          }
-        ],
-        "/SociIndexBuildIntegTest/ImageFromAssetAndEnv/Index/Resource/Default": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ImageFromAssetAndEnvIndex72D69067"
           }
         ],
         "/SociIndexBuildIntegTest/BootstrapVersion": [

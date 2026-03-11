@@ -51,12 +51,10 @@ export class SociIndexV2Build extends Construct {
     scope: Construct,
     id: string,
     imageAsset: DockerImageAsset,
-    computeType?: ComputeType
   ) {
     return new SociIndexV2Build(scope, id, {
       repository: imageAsset.repository,
       inputImageTag: imageAsset.assetHash,
-      computeType,
     });
   }
 
@@ -80,10 +78,6 @@ export class SociIndexV2Build extends Construct {
       lambdaPurpose: 'DeployTimeBuildCustomResourceHandler',
       timeout: Duration.minutes(5),
     });
-
-    const defaultEnvironment: BuildEnvironment = {
-      buildImage: LinuxBuildImage.fromCodeBuildImageId('aws/codebuild/standard:7.0'),
-    };
 
     const project = new SingletonProject(this, 'Project', {
       uuid: 'e7e8a038-e0e4-4f55-8114-cdd6523ad08f', // generated for this construct
