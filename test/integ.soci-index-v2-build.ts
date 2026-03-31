@@ -1,6 +1,7 @@
 import { join } from 'path';
 import { IntegTest } from '@aws-cdk/integ-tests-alpha';
 import { Stack, StackProps, App } from 'aws-cdk-lib';
+import { ComputeType } from 'aws-cdk-lib/aws-codebuild';
 import { DockerImageAsset } from 'aws-cdk-lib/aws-ecr-assets';
 import { Construct } from 'constructs';
 import { SociIndexV2Build } from '../src';
@@ -33,6 +34,21 @@ class TestStack extends Stack {
         buildArgs: { DUMMY_FILE_SIZE_MB: '50' },
       });
       SociIndexV2Build.fromDockerImageAsset(parent, 'Index', asset);
+    }
+
+    // Test custom computeType
+    {
+      const parent = new Construct(this, 'ImageCustomEnv');
+      const asset = new DockerImageAsset(parent, 'Image', {
+        directory: join(__dirname, '../example/example-image'),
+        buildArgs: { DUMMY_FILE_SIZE_MB: '20' },
+      });
+      new SociIndexV2Build(parent, 'Index', {
+        inputImageTag: asset.assetHash,
+        outputImageTag: `${asset.assetHash}-soci-env`,
+        repository: asset.repository,
+        computeType: ComputeType.LARGE,
+      });
     }
   }
 }

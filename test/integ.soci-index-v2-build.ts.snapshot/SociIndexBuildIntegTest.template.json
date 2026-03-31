@@ -337,6 +337,28 @@
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
+  },
+  "ImageCustomEnvIndexE79B3BC5": {
+   "Type": "Custom::CDKSociIndexBuild",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f306AEFF37",
+      "Arn"
+     ]
+    },
+    "type": "SociIndexV2Build",
+    "inputImageTag": "f169cb23854b4d08dd380e999944f76b313afd072dc39c875befdef94c7e9245",
+    "outputImageTag": "f169cb23854b4d08dd380e999944f76b313afd072dc39c875befdef94c7e9245-soci-env",
+    "repositoryName": {
+     "Fn::Sub": "cdk-hnb659fds-container-assets-${AWS::AccountId}-${AWS::Region}"
+    },
+    "codeBuildProjectName": {
+     "Ref": "SociIndexV2Builde7e8a038e0e44f558114cdd6523ad08famd6470130487"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
   }
  },
  "Parameters": {

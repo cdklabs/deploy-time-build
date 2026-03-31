@@ -1740,6 +1740,7 @@ const sociIndexV2BuildProps: SociIndexV2BuildProps = { ... }
 | --- | --- | --- |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.inputImageTag">inputImageTag</a></code> | <code>string</code> | The tag of the container image you want to build index for. |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.repository">repository</a></code> | <code>aws-cdk-lib.aws_ecr.IRepository</code> | The ECR repository your container image is stored. |
+| <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.computeType">computeType</a></code> | <code>aws-cdk-lib.aws_codebuild.ComputeType</code> | The compute type to use for the CodeBuild project. |
 | <code><a href="#@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.outputImageTag">outputImageTag</a></code> | <code>string</code> | The tag of the output container image embedded with SOCI index. |
 
 ---
@@ -1768,6 +1769,19 @@ The ECR repository your container image is stored.
 
 You can only specify a repository in the same environment (account/region).
 The index artifact will be uploaded to this repository.
+
+---
+
+##### `computeType`<sup>Optional</sup> <a name="computeType" id="@cdklabs/deploy-time-build.SociIndexV2BuildProps.property.computeType"></a>
+
+```typescript
+public readonly computeType: ComputeType;
+```
+
+- *Type:* aws-cdk-lib.aws_codebuild.ComputeType
+- *Default:* ComputeType.SMALL
+
+The compute type to use for the CodeBuild project.
 
 ---
 
