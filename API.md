@@ -1013,6 +1013,7 @@ const containerImageBuildProps: ContainerImageBuildProps = { ... }
 | <code><a href="#@cdklabs/deploy-time-build.ContainerImageBuildProps.property.extraHash">extraHash</a></code> | <code>string</code> | Extra information to encode into the fingerprint (e.g. build instructions and other inputs). |
 | <code><a href="#@cdklabs/deploy-time-build.ContainerImageBuildProps.property.assetName">assetName</a></code> | <code>string</code> | Unique identifier of the docker image asset and its potential revisions. |
 | <code><a href="#@cdklabs/deploy-time-build.ContainerImageBuildProps.property.buildArgs">buildArgs</a></code> | <code>{[ key: string ]: string}</code> | Build args to pass to the `docker build` command. |
+| <code><a href="#@cdklabs/deploy-time-build.ContainerImageBuildProps.property.buildContexts">buildContexts</a></code> | <code>{[ key: string ]: string}</code> | Build contexts to pass to the `docker build` command. |
 | <code><a href="#@cdklabs/deploy-time-build.ContainerImageBuildProps.property.buildSecrets">buildSecrets</a></code> | <code>{[ key: string ]: string}</code> | Build secrets. |
 | <code><a href="#@cdklabs/deploy-time-build.ContainerImageBuildProps.property.buildSsh">buildSsh</a></code> | <code>string</code> | SSH agent socket or keys to pass to the `docker build` command. |
 | <code><a href="#@cdklabs/deploy-time-build.ContainerImageBuildProps.property.cacheDisabled">cacheDisabled</a></code> | <code>boolean</code> | Disable the cache and pass `--no-cache` to the `docker build` command. |
@@ -1118,6 +1119,29 @@ Build args to pass to the `docker build` command.
 Since Docker build arguments are resolved before deployment, keys and
 values cannot refer to unresolved tokens (such as `lambda.functionArn` or
 `queue.queueUrl`).
+
+---
+
+##### `buildContexts`<sup>Optional</sup> <a name="buildContexts" id="@cdklabs/deploy-time-build.ContainerImageBuildProps.property.buildContexts"></a>
+
+```typescript
+public readonly buildContexts: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+- *Default:* no additional build contexts
+
+Build contexts to pass to the `docker build` command.
+
+Build contexts can be used to specify additional directories or images
+to use during the build. Each entry specifies a named build context
+and its source (a directory path, a URL, or a docker image).
+
+Since Docker build contexts are resolved before deployment, keys and
+values cannot refer to unresolved tokens (such as `lambda.functionArn` or
+`queue.queueUrl`).
+
+> [https://docs.docker.com/build/building/context/#additional-build-contexts](https://docs.docker.com/build/building/context/#additional-build-contexts)
 
 ---
 
