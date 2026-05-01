@@ -323,7 +323,8 @@
       "name": "upgrade",
       "description": "upgrade dependencies",
       "env": {
-        "CI": "0"
+        "CI": "0",
+        "NPM_CONFIG_BEFORE": "$(node -p \"new Date(Date.now()-259200000).toISOString()\")"
       },
       "steps": [
         {
@@ -339,7 +340,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@18 --upgrade --target=latest --peer --no-deprecated --dep=dev,peer,prod,optional --filter=cdklabs-projen-project-types,projen"
+          "exec": "npx npm-check-updates@20 --upgrade --target=latest --peer --no-deprecated --dep=dev,peer,prod,optional --filter=cdklabs-projen-project-types,projen"
         },
         {
           "exec": "npm install"
@@ -359,11 +360,12 @@
       "name": "upgrade-dev-deps",
       "description": "upgrade dev dependencies",
       "env": {
-        "CI": "0"
+        "CI": "0",
+        "NPM_CONFIG_BEFORE": "$(node -p \"new Date(Date.now()-259200000).toISOString()\")"
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev --filter=eslint-import-resolver-typescript,eslint-plugin-import,jsii-diff,jsii-pacmak,jsii-rosetta,ts-node,typescript"
+          "exec": "npx npm-check-updates@20 --upgrade --target=minor --cooldown=3 --peer --no-deprecated --dep=dev --filter=eslint-import-resolver-typescript,eslint-plugin-import,jsii-diff,jsii-pacmak,jsii-rosetta,ts-node,typescript"
         },
         {
           "exec": "npm install"
