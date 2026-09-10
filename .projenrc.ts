@@ -16,6 +16,9 @@ const project = new CdklabsConstructLibrary({
   cdkVersion: minCdkVersion,
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.9.0',
+  // Align with jsii ~5.9. TS >= 5.3 is also required by ts-jest 29.3+'s transpile
+  // path (ts.JSDocParsingMode), which projen enables via isolatedModules in newer versions.
+  typescriptVersion: '~5.9.0',
   name: '@cdklabs/deploy-time-build',
   repositoryUrl: 'https://github.com/cdklabs/deploy-time-build.git',
   packageManager: NodePackageManager.NPM,
