@@ -393,7 +393,7 @@
       "sourceBucketName": {
        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
       },
-      "sourceObjectKey": "3739a87311f5d49186212da66baf3dacab3b395e910b20a5153d2ca9fac9e3ed.zip",
+      "sourceObjectKey": "414c8d4ed0fd1d012d75278125b3fa7da9d37f2a29c52fa0c87550937ca5a903.zip",
       "extractPath": "example-app"
      }
     ],
