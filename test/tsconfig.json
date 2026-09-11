@@ -5,6 +5,7 @@
     "noEmit": true,
     "rootDir": "..",
     "stripInternal": true,
+    "isolatedModules": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false
   },
