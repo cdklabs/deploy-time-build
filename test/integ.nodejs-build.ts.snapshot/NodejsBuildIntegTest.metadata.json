@@ -1,13 +1,4 @@
 {
-  "/NodejsBuildIntegTest": [
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "<anonymous> (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:44:15)",
-        "...node internals, ts-node, ts-node..."
-      ]
-    }
-  ],
   "/NodejsBuildIntegTest/Destination": [
     {
       "type": "aws:cdk:analytics:construct",
@@ -40,41 +31,18 @@
     {
       "type": "aws:cdk:logicalId",
       "data": "BootstrapVersion"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
-      ]
     }
   ],
   "/NodejsBuildIntegTest/CheckBootstrapVersion": [
     {
       "type": "aws:cdk:logicalId",
       "data": "CheckBootstrapVersion"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
-      ]
     }
   ],
   "/NodejsBuildIntegTest/Destination/Resource": [
     {
       "type": "aws:cdk:logicalId",
       "data": "Destination920A3C57"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...new Bucket2 in aws-cdk-lib...",
-        "new TestStack (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:15:23)",
-        "<anonymous> (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:44:15)",
-        "...node internals, ts-node, ts-node..."
-      ]
     },
     {
       "type": "aws:cdk:analytics:mixin",
@@ -101,26 +69,12 @@
     {
       "type": "aws:cdk:logicalId",
       "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
-      ]
     }
   ],
   "/NodejsBuildIntegTest/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
     {
       "type": "aws:cdk:logicalId",
       "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
-      ]
     }
   ],
   "/NodejsBuildIntegTest/ExampleBuild/CustomResourceHandler": [
@@ -173,15 +127,6 @@
     {
       "type": "aws:cdk:logicalId",
       "data": "ExampleBuildDownloadEnvFileC240151B"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "new NodejsBuild (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/src/nodejs-build.ts:357:7)",
-        "new TestStack (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:23:5)",
-        "<anonymous> (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:44:15)",
-        "...node internals, ts-node, ts-node..."
-      ]
     }
   ],
   "/NodejsBuildIntegTest/NodejsBuildCustomResourceHandler25648b212c404f09aa65b6bbb0c44659/ServiceRole": [
@@ -228,16 +173,6 @@
     {
       "type": "aws:cdk:logicalId",
       "data": "NodejsBuildCustomResourceHandler25648b212c404f09aa65b6bbb0c446591C4101F8"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...new SingletonFunction2 in aws-cdk-lib...",
-        "new NodejsBuild (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/src/nodejs-build.ts:122:21)",
-        "new TestStack (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:23:5)",
-        "<anonymous> (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:44:15)",
-        "...node internals, ts-node..."
-      ]
     }
   ],
   "/NodejsBuildIntegTest/NodejsBuildCustomResourceHandler25648b212c404f09aa65b6bbb0c44659/LogGroup": [
@@ -254,15 +189,6 @@
       "data": "DestinationPolicy7982387E"
     },
     {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...new Bucket2 in aws-cdk-lib...",
-        "new TestStack (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:15:23)",
-        "<anonymous> (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:44:15)",
-        "...node internals..."
-      ]
-    },
-    {
       "type": "aws:cdk:analytics:mixin",
       "data": {
         "mixin": "aws-cdk-lib.aws_s3.mixins.BucketPolicyStatements"
@@ -273,13 +199,6 @@
     {
       "type": "aws:cdk:logicalId",
       "data": "DestinationAutoDeleteObjectsCustomResource15E926BA"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
-      ]
     }
   ],
   "/NodejsBuildIntegTest/ExampleBuild/Project/Role": [
@@ -354,19 +273,9 @@
     {
       "type": "aws:cdk:logicalId",
       "data": "ExampleBuildProjectEF5CAC49"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...new Project2 in aws-cdk-lib...",
-        "new NodejsBuild (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/src/nodejs-build.ts:162:21)",
-        "new TestStack (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:23:5)",
-        "<anonymous> (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:44:15)",
-        "...node internals, ts-node, ts-node..."
-      ]
     }
   ],
-  "/NodejsBuildIntegTest/ExampleBuild/Source-Users--yyukky--.kiro--crew--scratch--runtime-5027c614--dtb--example--example-app/AssetBucket": [
+  "/NodejsBuildIntegTest/ExampleBuild/Source-Users--yyukky--.kiro--crew--scratch--runtime-c8560aa4--dtb--example--example-app/AssetBucket": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": "*"
@@ -376,31 +285,12 @@
     {
       "type": "aws:cdk:logicalId",
       "data": "ExampleBuild61F1D79B"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...new CustomResource2 in aws-cdk-lib...",
-        "new NodejsBuild (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/src/nodejs-build.ts:347:20)",
-        "new TestStack (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:23:5)",
-        "<anonymous> (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:44:15)",
-        "...node internals, ts-node, ts-node..."
-      ]
     }
   ],
   "/NodejsBuildIntegTest/NodejsBuildCustomResourceHandler25648b212c404f09aa65b6bbb0c44659/ServiceRole/Resource": [
     {
       "type": "aws:cdk:logicalId",
       "data": "NodejsBuildCustomResourceHandler25648b212c404f09aa65b6bbb0c44659ServiceRoleCB01FBE6"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...new SingletonFunction2 in aws-cdk-lib...",
-        "new NodejsBuild (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/src/nodejs-build.ts:122:21)",
-        "new TestStack (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:23:5)",
-        "<anonymous> (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:44:15)"
-      ]
     }
   ],
   "/NodejsBuildIntegTest/NodejsBuildCustomResourceHandler25648b212c404f09aa65b6bbb0c44659/ServiceRole/DefaultPolicy": [
@@ -443,31 +333,12 @@
     {
       "type": "aws:cdk:logicalId",
       "data": "NodejsBuildCustomResourceHandler25648b212c404f09aa65b6bbb0c44659LogGroupEB7A8A04"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...new SingletonFunction2 in aws-cdk-lib...",
-        "new NodejsBuild (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/src/nodejs-build.ts:122:21)",
-        "new TestStack (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:23:5)",
-        "<anonymous> (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:44:15)"
-      ]
     }
   ],
   "/NodejsBuildIntegTest/ExampleBuild/Project/Role/Resource": [
     {
       "type": "aws:cdk:logicalId",
       "data": "ExampleBuildProjectRole823D0208"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...new Project2 in aws-cdk-lib...",
-        "new NodejsBuild (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/src/nodejs-build.ts:162:21)",
-        "new TestStack (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:23:5)",
-        "<anonymous> (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:44:15)",
-        "...node internals, ts-node..."
-      ]
     }
   ],
   "/NodejsBuildIntegTest/ExampleBuild/Project/Role/DefaultPolicy": [
@@ -536,29 +407,12 @@
     {
       "type": "aws:cdk:logicalId",
       "data": "NodejsBuildCustomResourceHandler25648b212c404f09aa65b6bbb0c44659ServiceRoleDefaultPolicyCF8879D3"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...WrappedClass.addToRolePolicy in aws-cdk-lib...",
-        "new NodejsBuild (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/src/nodejs-build.ts:281:13)",
-        "new TestStack (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:23:5)",
-        "<anonymous> (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/test/integ.nodejs-build.ts:44:15)",
-        "...node internals..."
-      ]
     }
   ],
   "/NodejsBuildIntegTest/ExampleBuild/Project/Role/DefaultPolicy/Resource": [
     {
       "type": "aws:cdk:logicalId",
       "data": "ExampleBuildProjectRoleDefaultPolicy1E341966"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...new Project2 in aws-cdk-lib...",
-        "new NodejsBuild (/Users/yyukky/.kiro/crew/scratch/runtime-5027c614/dtb/src/nodejs-build.ts:162:21)"
-      ]
     }
   ]
 }

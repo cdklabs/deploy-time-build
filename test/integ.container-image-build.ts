@@ -7,7 +7,7 @@ import { Cluster, FargateTaskDefinition, CpuArchitecture, AwsLogDriver } from 'a
 import { DockerImageFunction } from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 import { ContainerImageBuild } from '../src';
-import { getCrHandlerHash } from './util';
+import { acknowledgeEmptyDeployAssert, getCrHandlerHash } from './util';
 
 const app = new App();
 
@@ -54,7 +54,9 @@ class TestStack extends Stack {
 
 const stack = new TestStack(app, 'ContainerImageBuildIntegTest');
 
-new IntegTest(app, 'Test', {
+const integ = new IntegTest(app, 'Test', {
   testCases: [stack],
   diffAssets: true,
 });
+
+acknowledgeEmptyDeployAssert(integ);

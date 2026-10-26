@@ -1,5 +1,5 @@
 {
-  "version": "53.0.0",
+  "version": "54.0.0",
   "files": {
     "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6": {
       "displayName": "NodejsBuildIntegTest/Custom::S3AutoDeleteObjectsCustomResourceProvider Code",
@@ -30,7 +30,7 @@
       }
     },
     "414c8d4ed0fd1d012d75278125b3fa7da9d37f2a29c52fa0c87550937ca5a903": {
-      "displayName": "ExampleBuild/Source-Users--yyukky--.kiro--crew--scratch--runtime-5027c614--dtb--example--example-app",
+      "displayName": "ExampleBuild/Source-Users--yyukky--.kiro--crew--scratch--runtime-c8560aa4--dtb--example--example-app",
       "source": {
         "path": "asset.414c8d4ed0fd1d012d75278125b3fa7da9d37f2a29c52fa0c87550937ca5a903",
         "packaging": "zip"
@@ -43,16 +43,16 @@
         }
       }
     },
-    "7711b112f4e24d122b82af6fe1df0284563260bf7ffde0b999c77584be873c96": {
+    "e5a2aa85a14bf7a5fa690b1348f8b43be4be1279c5e7db322a241ecfad433b2c": {
       "displayName": "NodejsBuildIntegTest Template",
       "source": {
         "path": "NodejsBuildIntegTest.template.json",
         "packaging": "file"
       },
       "destinations": {
-        "current_account-current_region-7bed32e9": {
+        "current_account-current_region-74ddf9bd": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "7711b112f4e24d122b82af6fe1df0284563260bf7ffde0b999c77584be873c96.json",
+          "objectKey": "e5a2aa85a14bf7a5fa690b1348f8b43be4be1279c5e7db322a241ecfad433b2c.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
