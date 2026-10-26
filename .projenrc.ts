@@ -77,7 +77,7 @@ project.buildWorkflow?.addPostBuildJob('verify-min-cdk-version', {
   steps: [
     {
       name: 'Checkout',
-      uses: 'actions/checkout@v4',
+      uses: 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1',
       with: {
         ref: '${{ github.event.pull_request.head.ref }}',
         repository: '${{ github.event.pull_request.head.repo.full_name }}',
@@ -85,9 +85,10 @@ project.buildWorkflow?.addPostBuildJob('verify-min-cdk-version', {
     },
     {
       name: 'Setup Node.js',
-      uses: 'actions/setup-node@v4',
+      uses: 'actions/setup-node@v7.0.0',
       with: {
         'node-version': '24',
+        'package-manager-cache': false,
       },
     },
     {
