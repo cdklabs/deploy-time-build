@@ -5,7 +5,7 @@ import { ComputeType } from 'aws-cdk-lib/aws-codebuild';
 import { DockerImageAsset } from 'aws-cdk-lib/aws-ecr-assets';
 import { Construct } from 'constructs';
 import { SociIndexV2Build } from '../src';
-import { getCrHandlerHash } from './util';
+import { acknowledgeEmptyDeployAssert, getCrHandlerHash } from './util';
 
 const app = new App();
 
@@ -55,7 +55,8 @@ class TestStack extends Stack {
 
 const stack = new TestStack(app, 'SociIndexBuildIntegTest');
 
-new IntegTest(app, 'Test', {
+const integ = new IntegTest(app, 'Test', {
   testCases: [stack],
   diffAssets: true,
 });
+acknowledgeEmptyDeployAssert(integ);

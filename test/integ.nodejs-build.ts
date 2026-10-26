@@ -3,7 +3,7 @@ import { IntegTest } from '@aws-cdk/integ-tests-alpha';
 import { Stack, StackProps, App, RemovalPolicy } from 'aws-cdk-lib';
 import { BlockPublicAccess, Bucket, BucketEncryption } from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
-import { getCrHandlerHash } from './util';
+import { acknowledgeEmptyDeployAssert, getCrHandlerHash } from './util';
 import { NodejsBuild } from '../src/nodejs-build';
 
 const app = new App();
@@ -43,7 +43,9 @@ class TestStack extends Stack {
 
 const stack = new TestStack(app, 'NodejsBuildIntegTest');
 
-new IntegTest(app, 'Test', {
+const integ = new IntegTest(app, 'Test', {
   testCases: [stack],
   diffAssets: true,
 });
+
+acknowledgeEmptyDeployAssert(integ);

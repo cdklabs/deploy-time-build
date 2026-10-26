@@ -4,6 +4,7 @@ import { Stack, StackProps, App } from 'aws-cdk-lib';
 import { DockerImageAsset } from 'aws-cdk-lib/aws-ecr-assets';
 import { Construct } from 'constructs';
 import { SociIndexBuild } from '../src';
+import { acknowledgeEmptyDeployAssert } from './util';
 
 const app = new App();
 
@@ -34,7 +35,9 @@ class TestStack extends Stack {
 
 const stack = new TestStack(app, 'SociIndexBuildIntegTest');
 
-new IntegTest(app, 'Test', {
+const integ = new IntegTest(app, 'Test', {
   testCases: [stack],
   diffAssets: true,
 });
+
+acknowledgeEmptyDeployAssert(integ);

@@ -1,0 +1,1523 @@
+{
+  "/ContainerImageBuildIntegTest": [
+    {
+      "type": "aws:cdk:acknowledged-rules",
+      "data": {
+        "CloudFormation-Validate::W3010": "Literal AZs in template are the result of accessing stack.availabilityZones, this is expected and safe"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "natGateways": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Custom::VpcRestrictDefaultSGCustomResourceProvider": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+      "data": true
+    }
+  ],
+  "/ContainerImageBuildIntegTest/DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "runtime": "*",
+        "code": "*",
+        "handler": "*",
+        "timeout": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30amd64": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "environment": {
+          "computeType": "BUILD_GENERAL1_SMALL",
+          "buildImage": {
+            "type": "*",
+            "defaultComputeType": "BUILD_GENERAL1_SMALL",
+            "imageId": "*",
+            "imagePullPrincipalType": "CODEBUILD",
+            "secretsManagerCredentials": "*",
+            "repository": "*"
+          },
+          "privileged": true
+        },
+        "vpc": "*",
+        "buildSpec": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildArm64e83729feb1564e709bec452b15847a30amd64": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "environment": {
+          "computeType": "BUILD_GENERAL1_SMALL",
+          "buildImage": {
+            "type": "*",
+            "defaultComputeType": "BUILD_GENERAL1_LARGE",
+            "imageId": "*",
+            "imagePullPrincipalType": "CODEBUILD",
+            "secretsManagerCredentials": "*",
+            "repository": "*"
+          },
+          "privileged": true
+        },
+        "vpc": "*",
+        "buildSpec": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Function": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "code": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "code": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Cluster": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "vpc": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/TaskDefinition": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": "*"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "environment": {
+          "computeType": "BUILD_GENERAL1_SMALL",
+          "buildImage": {
+            "type": "*",
+            "defaultComputeType": "BUILD_GENERAL1_SMALL",
+            "imageId": "*",
+            "imagePullPrincipalType": "CODEBUILD",
+            "secretsManagerCredentials": "*",
+            "repository": "*"
+          },
+          "privileged": true
+        },
+        "vpc": "*",
+        "buildSpec": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV257066EE3"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet1": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": true,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": true,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {}
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addNatGateway": [
+          "*",
+          {
+            "maxDrainDuration": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet2": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": true,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": true,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {}
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PrivateSubnet1": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": false,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": false,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {}
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PrivateSubnet2": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": false,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": false,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {}
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/IGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2IGWD1C41C9C"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/VPCGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2VPCGW167F37E8"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/RestrictDefaultSecurityGroupCustomResource": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Build/CustomResourceHandler": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "runtime": "*",
+        "code": "*",
+        "handler": "*",
+        "uuid": "*",
+        "lambdaPurpose": "*",
+        "timeout": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Build/Repository": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "removalPolicy": "destroy"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToResourcePolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Build/Resource": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": "*"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f306AEFF37"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30amd64/Role": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "roleName": "*",
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        }
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addManagedPolicy": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30amd64/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30amd6491AAA9B2"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/BuildArm/CustomResourceHandler": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "runtime": "*",
+        "code": "*",
+        "handler": "*",
+        "uuid": "*",
+        "lambdaPurpose": "*",
+        "timeout": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/BuildArm/Resource": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": "*"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildArm64e83729feb1564e709bec452b15847a30amd64/Role": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "roleName": "*",
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        }
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addManagedPolicy": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildArm64e83729feb1564e709bec452b15847a30amd64/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerImageBuildArm64e83729feb1564e709bec452b15847a30amd64C13E3549"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Function/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Function/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Function76856677"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Function/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Cluster/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ClusterEB0386A7"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/TaskDefinition/TaskRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        }
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/TaskDefinition/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TaskDefinitionB36D86D9"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/TaskDefinition/ExecutionRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "roleName": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/BuildVpc/CustomResourceHandler": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "runtime": "*",
+        "code": "*",
+        "handler": "*",
+        "uuid": "*",
+        "lambdaPurpose": "*",
+        "timeout": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/BuildVpc/Repository": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "removalPolicy": "destroy"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/BuildVpc/Resource": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": "*"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64/Role": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "roleName": "*",
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        }
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addManagedPolicy": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64/SecurityGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "vpc": "*",
+        "description": "*",
+        "allowAllOutbound": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64C6D1C187"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64/PolicyDocument": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "statements": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PublicSubnet1SubnetD67FC535"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PublicSubnet1RouteTable6094F526"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PublicSubnet1RouteTableAssociation7CEECFFF"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet1/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PublicSubnet1DefaultRoute00753B94"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet1/EIP": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PublicSubnet1EIPCB084C48"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet1/NATGateway": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PublicSubnet1NATGatewayD04F745E"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PublicSubnet2Subnet63F50919"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PublicSubnet2RouteTable4FB96B9F"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PublicSubnet2RouteTableAssociationE75A579E"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PublicSubnet2/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PublicSubnet2DefaultRoute9078EB37"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PrivateSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PrivateSubnet1Subnet10A485FB"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PrivateSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PrivateSubnet1RouteTable7476B1CF"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PrivateSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PrivateSubnet1RouteTableAssociation52F79D41"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PrivateSubnet1/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PrivateSubnet1DefaultRoute5D002E26"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PrivateSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PrivateSubnet2Subnet038DDA50"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PrivateSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PrivateSubnet2RouteTable7B419F52"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PrivateSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PrivateSubnet2RouteTableAssociationAA17A176"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/PrivateSubnet2/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2PrivateSubnet2DefaultRouteA0C8D70C"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/VpcV2/RestrictDefaultSecurityGroupCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcV2RestrictDefaultSecurityGroupCustomResourceA4609A1E"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Build/Repository/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BuildRepository4E6D17C2"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Build/Source/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Build/Resource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Build45A36621"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3ServiceRoleB008BAA4"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3/ServiceRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3LogGroupD6190314"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30amd64/Role/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30amd64RoleD95F32B9"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30amd64/Role/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/BuildArm/Source/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/BuildArm/Resource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BuildArmF8ABF624"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildArm64e83729feb1564e709bec452b15847a30amd64/Role/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerImageBuildArm64e83729feb1564e709bec452b15847a30amd64RoleC5F7BBFE"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildArm64e83729feb1564e709bec452b15847a30amd64/Role/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Function/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "FunctionServiceRole675BB04A"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/Function/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "FunctionLogGroup55B80E27"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/TaskDefinition/TaskRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TaskDefinitionTaskRoleFD40A61D"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/TaskDefinition/main/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "retention": "*"
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/TaskDefinition/ExecutionRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TaskDefinitionExecutionRole8D61C2FB"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/TaskDefinition/ExecutionRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/BuildVpc/Repository/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BuildVpcRepositoryC4EB5D59"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/BuildVpc/Source/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/BuildVpc/Resource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BuildVpc1895B133"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64/Role/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64Role7FBDDED1"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64/Role/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64/SecurityGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64SecurityGroup48FE16CC"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64/PolicyDocument/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64PolicyDocument194E3D91"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DeployTimeBuildCustomResourceHandlerdb740fd554364a848a09e6dfcd01f4f3ServiceRoleDefaultPolicyFECC51DC"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30amd64/Role/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30amd64RoleDefaultPolicyBD233B55"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildArm64e83729feb1564e709bec452b15847a30amd64/Role/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerImageBuildArm64e83729feb1564e709bec452b15847a30amd64RoleDefaultPolicy2316728F"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/TaskDefinition/main/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TaskDefinitionmainLogGroup2F2AC027"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/TaskDefinition/ExecutionRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TaskDefinitionExecutionRoleDefaultPolicy1F3406F5"
+    }
+  ],
+  "/ContainerImageBuildIntegTest/ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64/Role/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerImageBuildAmd64e83729feb1564e709bec452b15847a30c8a085f75ccbc05f5149859bcf147b49eadd8ac37damd64RoleDefaultPolicyF7E07B6C"
+    }
+  ]
+}
