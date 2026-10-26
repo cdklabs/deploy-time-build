@@ -1,5 +1,5 @@
 {
-  "version": "54.0.0",
+  "version": "55.0.0",
   "title": "Validation Report",
   "pluginReports": [
     {
@@ -19,7 +19,7 @@
             {
               "constructPath": "Test/DefaultTest/DeployAssert",
               "constructFqn": "aws-cdk-lib.Stack",
-              "libraryVersion": "2.272.0"
+              "libraryVersion": "2.274.0"
             }
           ],
           "acknowledgedId": "CloudFormation-Validate::F0001",

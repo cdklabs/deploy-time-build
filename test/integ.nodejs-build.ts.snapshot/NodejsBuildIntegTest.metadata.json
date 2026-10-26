@@ -1,4 +1,10 @@
 {
+  "/NodejsBuildIntegTest": [
+    {
+      "type": "aws:cdk:templateFile",
+      "data": "NodejsBuildIntegTest.template.json"
+    }
+  ],
   "/NodejsBuildIntegTest/Destination": [
     {
       "type": "aws:cdk:analytics:construct",
@@ -275,7 +281,7 @@
       "data": "ExampleBuildProjectEF5CAC49"
     }
   ],
-  "/NodejsBuildIntegTest/ExampleBuild/Source-Users--yyukky--.kiro--crew--scratch--runtime-c8560aa4--dtb--example--example-app/AssetBucket": [
+  "/NodejsBuildIntegTest/ExampleBuild/Source-Users--yyukky--.kiro--crew--scratch--runtime-c8560aa4--dtb94--example--example-app/AssetBucket": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": "*"
