@@ -5,6 +5,10 @@
       "data": {
         "CloudFormation-Validate::F0001": "DeployAssert stack is empty because these integ tests have no assertions"
       }
+    },
+    {
+      "type": "aws:cdk:templateFile",
+      "data": "TestDefaultTestDeployAssert12909640.template.json"
     }
   ],
   "/Test/DefaultTest/DeployAssert/BootstrapVersion": [
